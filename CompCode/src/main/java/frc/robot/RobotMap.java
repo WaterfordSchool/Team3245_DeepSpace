@@ -19,29 +19,22 @@ public class RobotMap {
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
 
-  public static int leftFrontMotor = 1;
-  public static int leftRearMotor = 5;
-  public static int rightFrontMotor = 2;
-  public static int rightRearMotor = 6;
+ //Drivetrain TalonSRX Motor Controllers IDs
+ public static int leftFrontMotorID = 1;
+ public static int leftRearMotorID = 5;
+ public static int rightFrontMotorID = 2;
+ public static int rightRearMotorID = 6;
 
-  /**
-  //Drivetrain Mappings
-  leftDriveMotor(1),
-  rightDriveMotor(2),
-  leftSlaveMotor(5),       
-  rightSlaveMotor(6),
-  //Control Mappings
-  driverJoystick(0),
-  operatorJoystick(1);
-    
-  public final int value;
-  
-  RobotMap(int value) {
-    this.value = value;
-    } */
-  
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
+ //Elevator TalonSRX Motor Controllers IDs
+
+ public static int ElevatorMotorID = 5;
+ public static int SnakeWristMotorID = 6;
+ public static int SnakeWheelsID = 8;
+
+ //PCM Port Numbers for Pneumatics
+ public static int DiscPushPort = 3;
+ public static int GearShiftPort = 6;
+ public static int PegPushPort = 4;
+
+ 
 }
