@@ -11,12 +11,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.Compressor;
 
 
 /**
  * Add your docs here.
  */
 public class Pneumatics extends Subsystem {
+  public static Compressor compressor = new Compressor(20);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   AnalogInput m_pressureSensor = new AnalogInput(1);
@@ -30,11 +32,19 @@ public class Pneumatics extends Subsystem {
   public Pneumatics(){
 
   }
+
+  public static void init(){
+    compressor.start();
+  }
   public boolean isPressurised() {
     if (Robot.isReal()){
       return KMAXPRESSURE <= m_pressureSensor.getVoltage();
     } else {
       return true;
     }
+  }
+
+  public void writePressure() {
+    SmartDashboard.putNumber("Pressure", m_pressureSensor.getVoltage());
   }
 }

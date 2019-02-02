@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.PegPush;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
 
   public static OI m_oi;
   public static DriveTrain m_driveTrain = new DriveTrain();
+  public static PegPush m_pegPush = new PegPush();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -45,7 +47,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-
 
     CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
      

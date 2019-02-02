@@ -13,18 +13,29 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 /**
- * Add your docs here.
+
+* Add your docs here.
  */
 public class PegPush extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   //new solenoid called
-  DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 1);
+  DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 2);
   
-  public void DiscScore(){
+	public PegPush(){
+		LittleDog.set(DoubleSolenoid.Value.kReverse);
+	}
+
+
+  public void DiscScoreForward(){
     LittleDog.set(DoubleSolenoid.Value.kForward);
-    Timer.delay(3);
+  }
+  public void DiscScoreReverse(){
     LittleDog.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  public void DiscScoreOff(){
+    LittleDog.set(DoubleSolenoid.Value.kOff);
   }
   @Override
   public void initDefaultCommand() {

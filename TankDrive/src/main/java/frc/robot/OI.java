@@ -29,7 +29,8 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  public JoystickButton yellowButton;
+  public JoystickButton drYellowButton;
+  public JoystickButton drRedButton;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -55,7 +56,12 @@ public class OI {
     driver = new Joystick(0);
     operator = new Joystick(1);
 
-    yellowButton = new JoystickButton(driver, 4);
+    drYellowButton = new JoystickButton(driver, 4);
+    drYellowButton.whenPressed(new PegPushCommand());
+
+    drRedButton = new JoystickButton(driver, 3);
+    drRedButton.whenPressed(new PegRetractCommand());
+
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

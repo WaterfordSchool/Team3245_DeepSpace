@@ -65,7 +65,7 @@ public class DriveTrain extends Subsystem {
   }
 
   public void drive(Joystick joy, double kSpeed) {
-      drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(5));
+      drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(3));
   }
 
   public LimeLight gLimeLight(){
