@@ -11,18 +11,21 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class DiscCommand extends Command {
   public DiscCommand() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_PegPush);
+
+    
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.m_PegPush.DiscScore()
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
