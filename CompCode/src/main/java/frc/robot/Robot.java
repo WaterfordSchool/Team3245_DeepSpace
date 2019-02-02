@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.ShiftGear;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
@@ -35,6 +36,8 @@ public class Robot extends TimedRobot {
 
   public static OI m_oi;
   public static DriveTrain m_driveTrain = new DriveTrain();
+  public static ShiftGear m_ShiftGear = new ShiftGear();
+
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

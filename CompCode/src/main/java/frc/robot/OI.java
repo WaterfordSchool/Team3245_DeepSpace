@@ -6,6 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+import edu.wpi.first.wpilibj.buttons.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -30,6 +31,7 @@ public class OI {
   // Button button = new JoystickButton(stick, buttonNumber);
 
   Button drRightTrigger = new JoystickButton (driver, 8);
+  Button drLeftTrigger = new JoystickButton(driver, 7);
   Button opBlueButton = new JoystickButton (operator, 1); 
   Button opGreenButton = new JoystickButton (operator, 2);
   Button opRedButton = new JoystickButton (operator, 3);
@@ -64,7 +66,7 @@ public class OI {
     driver = new Joystick(0);
     operator = new Joystick(1);
 
-    yellowButton = new JoystickButton(driver, 4);
+    opYellowButton = new JoystickButton(driver, 4);
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
