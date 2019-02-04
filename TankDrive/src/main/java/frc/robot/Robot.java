@@ -13,8 +13,10 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 import frc.robot.commands.TankDrive;
+import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.PegPush;
+import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.HatchCover;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
@@ -38,7 +40,7 @@ public class Robot extends TimedRobot {
   public static Cargo m_cargo = new Cargo();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Elevator m_elevator = new Elevator();
-  public static HatchCover m_hatchCover = HatchCover();
+  public static HatchCover m_hatchCover = new HatchCover();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

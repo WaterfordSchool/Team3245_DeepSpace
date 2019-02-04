@@ -22,7 +22,7 @@ public class HatchCover extends Subsystem {
   //new solenoid called
   DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 2);
   
-	public PegPush(){
+	public HatchCover(){
 		LittleDog.set(DoubleSolenoid.Value.kReverse);
 	}
 

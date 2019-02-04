@@ -11,10 +11,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class PegPushCommand extends Command {
+  boolean peg_forward2;
   public PegPushCommand(boolean peg_forward) {
+    peg_forward2 = peg_forward;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_HatchCover);
+    requires(Robot.m_hatchCover);
   }
 
   // Called just before this Command runs the first time
@@ -26,11 +28,11 @@ public class PegPushCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if peg_forward == true {
+    if (peg_forward2 == true) {
     Robot.m_hatchCover.DiscScoreForward();
-    } 
-    else {Robot.m_hatchCover.DiscScoreReverse()
-    };
+    }
+    else {Robot.m_hatchCover.DiscScoreReverse();
+    }
 
   }
 
@@ -43,7 +45,7 @@ public class PegPushCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_pegPush.DiscScoreOff();
+    Robot.m_hatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same

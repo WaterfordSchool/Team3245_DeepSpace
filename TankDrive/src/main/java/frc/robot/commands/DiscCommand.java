@@ -8,10 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class DiscCommand extends Command {
   public DiscCommand() {
-    requires(Robot.m_PegPush);
+    requires(Robot.m_hatchCover);
 
     
   }
@@ -19,7 +20,7 @@ public class DiscCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_PegPush.DiscScore()
+    Robot.m_hatchCover.DiscScoreForward();
   }
 
   // Called repeatedly when this Command is scheduled to run

@@ -14,7 +14,7 @@ public class PegRetractCommand extends Command {
   public PegRetractCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_pegPush);
+    requires(Robot.m_hatchCover);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class PegRetractCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_pegPush.DiscScoreReverse();
+    Robot.m_hatchCover.DiscScoreReverse();
 
   }
 
@@ -39,7 +39,7 @@ public class PegRetractCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_pegPush.DiscScoreOff();
+    Robot.m_hatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same
