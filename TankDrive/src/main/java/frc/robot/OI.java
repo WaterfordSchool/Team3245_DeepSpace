@@ -57,10 +57,10 @@ public class OI {
     operator = new Joystick(1);
 
     drYellowButton = new JoystickButton(driver, 4);
-    drYellowButton.whenPressed(new PegPushCommand());
+    drYellowButton.whenPressed(new PegPushCommand(true));
 
     drRedButton = new JoystickButton(driver, 3);
-    drRedButton.whenPressed(new PegRetractCommand());
+    drRedButton.whenPressed(new PegRetractCommand(false));
 
 
     //SmartDashboard Button

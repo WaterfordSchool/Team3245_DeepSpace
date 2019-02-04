@@ -35,8 +35,10 @@ import edu.wpi.first.wpilibj.DriverStation;
 public class Robot extends TimedRobot {
 
   public static OI m_oi;
+  public static Cargo m_cargo = new Cargo();
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static PegPush m_pegPush = new PegPush();
+  public static Elevator m_elevator = new Elevator();
+  public static HatchCover m_hatchCover = HatchCover();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

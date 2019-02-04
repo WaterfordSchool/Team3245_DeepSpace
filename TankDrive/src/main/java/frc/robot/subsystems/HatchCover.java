@@ -8,14 +8,35 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 /**
- * Add your docs here.
+
+* Add your docs here.
  */
-public class SnakeWheels extends Subsystem {
+public class HatchCover extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  //new solenoid called
+  DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 2);
+  
+	public PegPush(){
+		LittleDog.set(DoubleSolenoid.Value.kReverse);
+	}
 
+
+  public void DiscScoreForward(){
+    LittleDog.set(DoubleSolenoid.Value.kForward);
+  }
+  public void DiscScoreReverse(){
+    LittleDog.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  public void DiscScoreOff(){
+    LittleDog.set(DoubleSolenoid.Value.kOff);
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
