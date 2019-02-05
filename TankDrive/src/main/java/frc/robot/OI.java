@@ -18,6 +18,8 @@ import frc.robot.commands.*;
  */
 public class OI {
 
+  boolean flipflop = false;
+
   public Joystick driver; //= new Joystick(RobotMap.driverJoystick.value);
   public Joystick operator; //= new Joystick(RobotMap.operatorJoystick.value);
 
@@ -57,11 +59,10 @@ public class OI {
     operator = new Joystick(1);
 
     drYellowButton = new JoystickButton(driver, 4);
-    drYellowButton.whenPressed(new PegPushCommand(true));
+    drYellowButton.whenPressed(new PegPushCommand());
 
     drRedButton = new JoystickButton(driver, 3);
-    drRedButton.whenPressed(new PegPushCommand(false));
-
+    drRedButton.whenPressed(new PegPushCommand());
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
