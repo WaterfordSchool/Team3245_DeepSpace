@@ -45,10 +45,15 @@ public class OI {
         	drRightTrigger = new JoystickButton (driver, 6);
         	drRightTrigger.whenPressed(new CubeScoringCommand ());
         
-        //Operator Controls
+		//Operator Controls
+		
+			//PegPush
+			drYellowButton = new JoystickButton (driver, 4);
+			drYellowButton.whenPressed(new PegPushCommand(true));
+
         	//Intake
         	//opLeftJoy wrist up and down
-        	//Intake Wrist Up
+			//Intake Wrist Up
         	opRightTrigger = new JoystickButton (operator, 8);
         	opRightTrigger.whileHeld(new IntakeWheelsIn());
 
