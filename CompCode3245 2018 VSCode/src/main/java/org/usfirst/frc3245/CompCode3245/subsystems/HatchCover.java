@@ -5,38 +5,35 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
+package org.usfirst.frc3245.CompCode3245.subsystems;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 /**
-
-* Add your docs here.
+ * Add your docs here.
  */
 public class HatchCover extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-  //new solenoid called
-  DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 2);
   
-	public HatchCover(){
-		LittleDog.set(DoubleSolenoid.Value.kReverse);
-	}
+  DoubleSolenoid PegPush = new DoubleSolenoid(20,0,2);
 
-
-  public void DiscScoreForward(){
-    LittleDog.set(DoubleSolenoid.Value.kForward);
+  public HatchCover(){
+    PegPush.set(DoubleSolenoid.Value.kReverse);
   }
+
+  public void DiscScoreFoward(){
+    PegPush.set(DoubleSolenoid.Value.kForward);
+  }
+
   public void DiscScoreReverse(){
-    LittleDog.set(DoubleSolenoid.Value.kReverse);
+    PegPush.set(DoubleSolenoid.Value.kReverse);
   }
 
   public void DiscScoreOff(){
-    LittleDog.set(DoubleSolenoid.Value.kOff);
+    PegPush.set(DoubleSolenoid.Value.kOff);
   }
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

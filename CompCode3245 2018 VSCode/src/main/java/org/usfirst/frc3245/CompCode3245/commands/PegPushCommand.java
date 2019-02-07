@@ -5,28 +5,35 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package org.usfirst.frc3245.CompCode3245.commands;
+
+import org.usfirst.frc3245.CompCode3245.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
 
-public class DiscCommand extends Command {
-  public DiscCommand() {
-    requires(Robot.m_hatchCover);
+public class PegPushCommand extends Command {
+  boolean peg_foward2;
+  public PegPushCommand(boolean peg_foward) {
+    peg_foward2 = peg_foward;
 
-    
+    requires(Robot.hatchCover);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_hatchCover.DiscScoreForward();
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
+    if(peg_foward2 == true){
+      Robot.hatchCover.DiscScoreFoward();
+    }
+    else {
+      Robot.hatchCover.DiscScoreReverse();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -38,11 +45,13 @@ public class DiscCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.hatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
