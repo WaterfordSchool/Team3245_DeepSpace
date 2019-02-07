@@ -32,6 +32,7 @@ public class OI {
     public JoystickButton DpadUp, DpadDown, DpadLeft, DpadRight;
     public JoystickButton drRightTrigger, drLeftTrigger, drYellowButton, drRightBumper, drLeftBumper;
     public JoystickButton opRightTrigger, opLeftTrigger, opRightBumper, opLeftBumper;
+	
 
 
     public OI() {
@@ -74,16 +75,16 @@ public class OI {
         	//Cart
         	// opGreenButton cart wheels in
         	opGreenButton = new JoystickButton (operator, 2);
-        	opGreenButton.whileHeld(new CartWheelsSpinIn());
+        	opGreenButton.whileHeld(new PegPushCommand());
         	// opYellowButton cart wheels out
         	opYellowButton = new JoystickButton (operator, 4);
-        	opYellowButton.whileHeld(new CartWheelsSpinOut());
+        	opYellowButton.whileHeld(new PegPushCommand());
         	// opBlueButton rotate arms in
         	opBlueButton = new JoystickButton (operator, 1);
-        	opBlueButton.whileHeld(new CartArmsRotateOut());
+        	opBlueButton.whileHeld(new DiscMech());
         	// opRedButton rotate arms out
         	opRedButton =  new JoystickButton (operator, 3);
-        	opRedButton.whileHeld(new CartArmsRotateIn());
+        	opRedButton.whileHeld(new DiscMech());
         	
         	//FastButton
         	drLeftBumper = new JoystickButton (driver, 5);

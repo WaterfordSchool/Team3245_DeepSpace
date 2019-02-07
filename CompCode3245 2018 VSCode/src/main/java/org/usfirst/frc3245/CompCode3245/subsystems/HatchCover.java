@@ -16,7 +16,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class HatchCover extends Subsystem {
   
-  DoubleSolenoid PegPush = new DoubleSolenoid(20,0,2);
+  DoubleSolenoid PegPush = new DoubleSolenoid(20,0,1);
+  DoubleSolenoid DiscMech = new DoubleSolenoid(20,2,3);
 
   public HatchCover(){
     PegPush.set(DoubleSolenoid.Value.kReverse);
@@ -32,6 +33,18 @@ public class HatchCover extends Subsystem {
 
   public void DiscScoreOff(){
     PegPush.set(DoubleSolenoid.Value.kOff);
+  }
+
+  public void DiscCartForward(){
+    DiscMech.set(DoubleSolenoid.Value.kForward);
+  }
+
+  public void DiscCartReverse(){
+    DiscMech.set(DoubleSolenoid.Value.kReserve);
+  }
+
+  public void DiscCartOff(){
+    DiscMech.set(DoubleSolenoid.Value.kOff);
   }
 
   @Override
