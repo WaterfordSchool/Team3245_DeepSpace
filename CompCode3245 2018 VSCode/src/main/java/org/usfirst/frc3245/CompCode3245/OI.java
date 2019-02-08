@@ -75,16 +75,16 @@ public class OI {
         	//Cart
         	// opGreenButton cart wheels in
         	opGreenButton = new JoystickButton (operator, 2);
-        	opGreenButton.whileHeld(new PegPushCommand());
+        	opGreenButton.whileHeld(new PegPushCommand(false));
         	// opYellowButton cart wheels out
         	opYellowButton = new JoystickButton (operator, 4);
-        	opYellowButton.whileHeld(new PegPushCommand());
+        	opYellowButton.whileHeld(new PegPushCommand(true));
         	// opBlueButton rotate arms in
         	opBlueButton = new JoystickButton (operator, 1);
-        	opBlueButton.whileHeld(new DiscMech());
+        	opBlueButton.whileHeld(new DiscMech(false));
         	// opRedButton rotate arms out
         	opRedButton =  new JoystickButton (operator, 3);
-        	opRedButton.whileHeld(new DiscMech());
+        	opRedButton.whileHeld(new DiscMech(true));
         	
         	//FastButton
         	drLeftBumper = new JoystickButton (driver, 5);

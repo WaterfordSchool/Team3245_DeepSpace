@@ -9,9 +9,13 @@ package org.usfirst.frc3245.CompCode3245.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+import org.usfirst.frc3245.CompCode3245.Robot;
+
+import edu.wpi.first.wpilibj.RobotBase;
+
 public class DiscMech extends Command {
   boolean discMech;
-  public DiscMech(boolean discMech) {
+  public DiscMech(boolean discMech2) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     discMech = discMech2;
@@ -28,7 +32,7 @@ public class DiscMech extends Command {
   @Override
   protected void execute() {
     if(discMech == true){
-      Robot.hatchcover.DiscCartForward();
+      Robot.hatchCover.DiscCartForward();
     }
     else{
       Robot.hatchCover.DiscCartReverse();
@@ -44,7 +48,7 @@ public class DiscMech extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.hatchCover.DiscCartOff
+    Robot.hatchCover.DiscCartOff();
   }
 
   // Called when another command which requires one or more of the same

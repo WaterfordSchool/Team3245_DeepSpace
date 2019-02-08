@@ -40,7 +40,7 @@ public class HatchCover extends Subsystem {
   }
 
   public void DiscCartReverse(){
-    DiscMech.set(DoubleSolenoid.Value.kReserve);
+    DiscMech.set(DoubleSolenoid.Value.kReverse);
   }
 
   public void DiscCartOff(){
