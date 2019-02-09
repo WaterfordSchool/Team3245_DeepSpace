@@ -6,14 +6,18 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+package org.usfirst.frc3245.CompCode3245.commands;
+//see if you need this package ^
+import org.usfirst.frc3245.CompCode3245.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class GearShift extends Command {
-  boolean gearShift
-  public GearShift(boolean gearShift) {
-    gearShift = gearShift2;
-    requires(Robot.DriveTrain);
+public class ElevatorCommand extends Command {
+  public ElevatorCommand() {
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
+    requires(Robot.Elevator);
+
   }
 
   // Called just before this Command runs the first time
@@ -25,23 +29,25 @@ public class GearShift extends Command {
   @Override
   protected void execute() {
     if(gearShift == true){
-      Robot.DriveTrain.DownShift();
+      Robot.Elevator.up();
     }
     else {
-      Robot.DriveTrain.UpShift();
+      Robot.Elevator.down();
     }
+  
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
     return false;
+    //return isTimedOut();
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.DriveTrain.ShiftOff();
+    Robot.Elevator.stop();
   }
 
   // Called when another command which requires one or more of the same

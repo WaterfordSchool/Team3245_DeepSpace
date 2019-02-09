@@ -51,6 +51,9 @@ public class DriveTrain extends Subsystem {
     rightRear.follow(rightFront);
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
+
+    DoubleSolenoid gearPiston = new DoubleSolenoid(20, 4, 7);
+
   }
   @Override
   public void initDefaultCommand() {
@@ -67,6 +70,24 @@ public class DriveTrain extends Subsystem {
   public void drive(Joystick joy, double kSpeed) {
       drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(5));
   }
+
+   //Instantiate Gear Shift Solenoid
+   
+
+
+   public void DownShift(){
+      gearPiston.set(DoubleSolenoid.Value.kForward);
+   }
+   
+   public void UpShift(){
+     gearPiston.set(DoubleSolenoid.Value.kReverse);
+   }
+   
+    public void ShiftOff (){
+      gearPiston.set(DoubleSolenoid.Value.kOff);
+    }
+   
+   
 
   public LimeLight gLimeLight(){
     return _limelight;

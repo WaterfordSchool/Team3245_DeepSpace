@@ -66,7 +66,30 @@ public class OI {
     driver = new Joystick(0);
     operator = new Joystick(1);
 
-    opYellowButton = new JoystickButton(driver, 4);
+    //Peg Push?
+    opYellowButton = new JoystickButton(operator, 4); //check the number later
+    opYellowButton.whenPressed(new PegPush(true));
+
+    //Peg Pull?
+    opRedButton = new JoyStickButton(operator, 3); //check the number later
+    opRedButton.whenPressed(new PegPush(false));
+
+    //Elevator Up
+    opGreenButton = new JoystickButton(operator, 2); //check the number later
+    opGreenButton.whenPressed(new ElevatorCommand(true));
+
+    //Elevator Down
+    opBlueButton = new JoyStickButton(operator, 1); //check the number later
+    opBlueButton.whenPressed(new ElevatorCommand(false)); 
+
+    //Gear Shift Down
+    drRightTrigger = new JoyStickButton (driver, 8); //check the number later
+    drRightTrigger.whenPressed(new GearShift(true));
+
+    //Gear Shift Up
+    drLeftTrigger = new JoyStickButton (driver, 7); //check the number later 
+    drLeftTrigger.whenPressed(new GearShift(false));
+
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

@@ -74,8 +74,8 @@ public class DriveTrain extends Subsystem {
 
     public void drive(Joystick joy, double kSpeed) {
     	drive(-kSpeed*joy.getY(), -kSpeed*joy.getAxis(AxisType.kThrottle));
-    	SmartDashboard.putNumber("Right Moter Speed", rightFrontMotor.get());
-    	SmartDashboard.putNumber("Left Moter Speed", leftFrontMotor.get());
+    	SmartDashboard.putNumber("Right Motor Speed", rightFrontMotor.get());
+    	SmartDashboard.putNumber("Left Motor Speed", leftFrontMotor.get());
     }
     
     public void resetEncoders() {

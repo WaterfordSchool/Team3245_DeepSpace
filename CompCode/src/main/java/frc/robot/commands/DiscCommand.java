@@ -10,9 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DiscCommand extends Command {
-  public DiscCommand() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  boolean pegPush
+  public PegPush(boolean pegPush) {
+   pegPush = pegPush2;
+    requires(Robot.HatchCover);
   }
 
   // Called just before this Command runs the first time
@@ -23,6 +24,12 @@ public class DiscCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if(pegPush == true){
+      Robot.HatchCover.DiscScoreForward();
+    }
+    else {
+      Robot.HatchCover.DiscScoreReverse();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,11 +41,13 @@ public class DiscCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.HatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
