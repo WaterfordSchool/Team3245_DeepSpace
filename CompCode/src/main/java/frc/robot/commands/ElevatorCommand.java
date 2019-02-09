@@ -27,12 +27,8 @@ public class ElevatorCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(gearShift == true){
-      Robot.m_Elevator.up();
-    }
-    else {
-      Robot.m_Elevator.down();
-    }
+    Robot.m_Elevator.activate(Robot.m_oi.getOperator());
+    
   
   }
 
@@ -46,7 +42,7 @@ public class ElevatorCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.Elevator.stop();
+    Robot.m_Elevator.stop();
   }
 
   // Called when another command which requires one or more of the same

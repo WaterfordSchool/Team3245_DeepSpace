@@ -8,12 +8,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class GearShift extends Command {
-  boolean gearShift
-  public GearShift(boolean gearShift) {
+  boolean gearShift;
+  public GearShift(boolean gearShift2) {
     gearShift = gearShift2;
-    requires(Robot.DriveTrain);
+    requires(Robot.m_driveTrain);
   }
 
   // Called just before this Command runs the first time
@@ -25,10 +26,10 @@ public class GearShift extends Command {
   @Override
   protected void execute() {
     if(gearShift == true){
-      Robot.DriveTrain.DownShift();
+      Robot.m_driveTrain.DownShift();
     }
     else {
-      Robot.DriveTrain.UpShift();
+      Robot.m_driveTrain.UpShift();
     }
   }
 
@@ -41,7 +42,7 @@ public class GearShift extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.DriveTrain.ShiftOff();
+    Robot.m_driveTrain.ShiftOff();
   }
 
   // Called when another command which requires one or more of the same
