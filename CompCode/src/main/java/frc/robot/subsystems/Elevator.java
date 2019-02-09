@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Elevator extends Subsystem {
 
-    public final WPI_TalonSRX elevatorMotor = new WPI_TalonSRX(5);
+    public final WPI_TalonSRX elevatorMotor = new WPI_TalonSRX(RobotMap.ElevatorMotorID);
     
 
 

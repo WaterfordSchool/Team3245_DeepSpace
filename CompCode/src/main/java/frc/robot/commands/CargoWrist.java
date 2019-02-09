@@ -8,9 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class SnakeWheelsCommand extends Command {
-  public SnakeWheelsCommand() {
+public class CargoWrist extends Command {
+  public CargoWrist() {
+    requires(Robot.m_cargo);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -23,6 +25,7 @@ public class SnakeWheelsCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.m_cargo.activate(Robot.m_oi.getOperator());
   }
 
   // Make this return true when this Command no longer needs to run execute()

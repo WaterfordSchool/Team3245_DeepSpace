@@ -21,15 +21,15 @@ public class RobotMap {
 
  //Drivetrain TalonSRX Motor Controllers IDs
  public static int leftFrontMotorID = 1;
- public static int leftRearMotorID = 5;
+ public static int leftRearMotorID = 3;
  public static int rightFrontMotorID = 2;
- public static int rightRearMotorID = 6;
+ public static int rightRearMotorID = 4;
 
  //Elevator TalonSRX Motor Controllers IDs
 
  public static int ElevatorMotorID = 5;
  public static int SnakeWristMotorID = 6;
- public static int SnakeWheelsID = 8;
+ public static int SnakeWheelsID = 7;
 
  //PCM Port Numbers for Pneumatics
  public static int DiscPushPort = 3;

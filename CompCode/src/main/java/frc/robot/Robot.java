@@ -39,6 +39,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static HatchCover m_hatchCover = new HatchCover();
   public static Elevator m_Elevator = new Elevator();
+  public static Cargo m_cargo = new Cargo();
 
 
   Command m_autonomousCommand;
