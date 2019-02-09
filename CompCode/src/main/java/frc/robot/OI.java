@@ -68,19 +68,19 @@ public class OI {
     operator = new Joystick(1);
 
     //Peg Push?
-    opYellowButton = new JoystickButton(operator, 4); //check the number later
+    opYellowButton = new JoystickButton(operator, 3); //check the number later
     opYellowButton.whenPressed(new DiscCommand(true));
 
     //Peg Pull?
-    opRedButton = new JoystickButton(operator, 3); //check the number later
+    opRedButton = new JoystickButton(operator, 1); //check the number later
     opRedButton.whenPressed(new DiscCommand(false));
 
     //Elevator Up
-    opGreenButton = new JoystickButton(operator, 2); //check the number later
+    opGreenButton = new JoystickButton(operator, 4); //check the number later
     opGreenButton.whenPressed(new PegPush(true));
 
     //Elevator Down
-    opBlueButton = new JoystickButton(operator, 1); //check the number later
+    opBlueButton = new JoystickButton(operator, 2); //check the number later
     opBlueButton.whenPressed(new PegPush(false)); 
 
     //Gear Shift Down
