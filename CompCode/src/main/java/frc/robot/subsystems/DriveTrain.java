@@ -65,11 +65,11 @@ public class DriveTrain extends Subsystem {
   }
 
   public void drive(double left, double right) {
-      tDrive.tankDrive(left, -right);
+      tDrive.tankDrive(-left, right);
   }
 
   public void drive(Joystick joy, double kSpeed) {
-      drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(5));
+      drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(3));
   }
 
    //Instantiate Gear Shift Solenoid

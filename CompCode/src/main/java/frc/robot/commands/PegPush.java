@@ -10,9 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class DiscCommand extends Command {
+public class PegPush extends Command {
   boolean pegPush;
-  public DiscCommand(boolean pegPush2) {
+  public PegPush(boolean pegPush2) {
    pegPush = pegPush2;
     requires(Robot.m_hatchCover);
   }
@@ -26,10 +26,10 @@ public class DiscCommand extends Command {
   @Override
   protected void execute() {
     if(pegPush == true){
-      Robot.m_hatchCover.DiscCartForward();
+      Robot.m_hatchCover.DiscScoreFoward();
     }
     else {
-      Robot.m_hatchCover.DiscCartReverse();
+      Robot.m_hatchCover.DiscScoreReverse();
     }
   }
 
@@ -42,7 +42,7 @@ public class DiscCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_hatchCover.DiscCartOff();
+    Robot.m_hatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same

@@ -7,6 +7,7 @@
 
 package frc.robot;
 import edu.wpi.first.wpilibj.buttons.*;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -76,11 +77,11 @@ public class OI {
 
     //Elevator Up
     opGreenButton = new JoystickButton(operator, 2); //check the number later
-    opGreenButton.whenPressed(new ElevatorCommand());
+    opGreenButton.whenPressed(new PegPush(true));
 
     //Elevator Down
     opBlueButton = new JoystickButton(operator, 1); //check the number later
-    opBlueButton.whenPressed(new ElevatorCommand()); 
+    opBlueButton.whenPressed(new PegPush(false)); 
 
     //Gear Shift Down
     drRightTrigger = new JoystickButton (driver, 8); //check the number later
@@ -89,6 +90,14 @@ public class OI {
     //Gear Shift Up
     drLeftTrigger = new JoystickButton (driver, 7); //check the number later 
     drLeftTrigger.whenPressed(new GearShift(false));
+
+    //Cargo wheels spin in
+    opRightBumper = new JoystickButton (operator, 6); 
+    opRightBumper.whileHeld(new CargoWheels(-0.7));
+
+     //Cargo wheels spin out
+     opLeftBumper = new JoystickButton (operator, 5); 
+     opLeftBumper.whileHeld(new CargoWheels(0.7));
 
 
     //SmartDashboard Button
