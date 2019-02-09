@@ -15,15 +15,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.HatchCover;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
+import org.opencv.imgproc.Imgproc;
+
 import edu.wpi.cscore.CvSink; //Full HD Camera
 import edu.wpi.cscore.CvSource; //Full HD Camera
 import edu.wpi.cscore.MjpegServer; //Full HD Camera
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Sendable;
 
 
 
@@ -39,8 +44,9 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Cargo m_cargo = new Cargo();
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static Elevator m_elevator = new Elevator();
   public static HatchCover m_hatchCover = new HatchCover();
+  //public static UsbCamera m_Camera= new UsbCamera("reee", " 10.32.45.182");
+
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -51,10 +57,27 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    new Thread(() -> {
+      UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
+      m_Camera.setResolution(640, 480);
+      m_Camera.setFPS(30);
 
-    CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
-     
+      CvSink cvSink = CameraServer.getInstance().getVideo();
+      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+
+      Mat source = new Mat();
+      Mat output = new Mat();
+
+      while(!Thread.interrupted()) {
+        cvSink.grabFrame(source);
+        Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+        outputStream.putFrame(output);
+      }
+    }).start();
+
     
+
+  
     
 
 
