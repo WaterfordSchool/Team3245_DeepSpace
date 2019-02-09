@@ -17,15 +17,18 @@ import edu.wpi.first.wpilibj.Joystick;
 /**
  * Add your docs here.
  */
+
 public class Cargo extends Subsystem {
   public final WPI_TalonSRX wristMotor = new WPI_TalonSRX(RobotMap.SnakeWristMotorID);
   public final WPI_TalonSRX wheelsMotor = new WPI_TalonSRX(RobotMap.SnakeWheelsID);
+
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+
   public void activate(Joystick joy) {
-    //activate(joy.getAxis(AxisType.kThrottle), 0);
     wristMotor.set(joy.getRawAxis(3));
   }
+
   public void up() {
     wristMotor.set(.7);
   }
@@ -35,6 +38,8 @@ public class Cargo extends Subsystem {
   public void stopWrist() {
     wristMotor.set(0);
   }
+
+
   public void inSpin(){
     wheelsMotor.set(0.7);
   }
@@ -44,6 +49,8 @@ public class Cargo extends Subsystem {
   public void stopWheels(){
     wheelsMotor.set(0);
   }
+
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
