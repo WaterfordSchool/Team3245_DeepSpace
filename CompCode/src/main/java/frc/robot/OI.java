@@ -71,23 +71,23 @@ public class OI {
     opYellowButton.whenPressed(new DiscCommand(true));
 
     //Peg Pull?
-    opRedButton = new JoyStickButton(operator, 3); //check the number later
-    opRedButton.whenPressed(new PegPush(false));
+    opRedButton = new JoystickButton(operator, 3); //check the number later
+    opRedButton.whenPressed(new DiscCommand(false));
 
     //Elevator Up
     opGreenButton = new JoystickButton(operator, 2); //check the number later
-    opGreenButton.whenPressed(new ElevatorCommand(true));
+    opGreenButton.whenPressed(new ElevatorCommand());
 
     //Elevator Down
-    opBlueButton = new JoyStickButton(operator, 1); //check the number later
-    opBlueButton.whenPressed(new ElevatorCommand(false)); 
+    opBlueButton = new JoystickButton(operator, 1); //check the number later
+    opBlueButton.whenPressed(new ElevatorCommand()); 
 
     //Gear Shift Down
-    drRightTrigger = new JoyStickButton (driver, 8); //check the number later
+    drRightTrigger = new JoystickButton (driver, 8); //check the number later
     drRightTrigger.whenPressed(new GearShift(true));
 
     //Gear Shift Up
-    drLeftTrigger = new JoyStickButton (driver, 7); //check the number later 
+    drLeftTrigger = new JoystickButton (driver, 7); //check the number later 
     drLeftTrigger.whenPressed(new GearShift(false));
 
 
