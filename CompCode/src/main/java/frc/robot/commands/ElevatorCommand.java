@@ -6,9 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-package org.usfirst.frc3245.CompCode3245.commands;
 //see if you need this package ^
-import org.usfirst.frc3245.CompCode3245.Robot;
+import frc.robot.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,7 +15,7 @@ public class ElevatorCommand extends Command {
   public ElevatorCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.Elevator);
+    requires(Robot.m_Elevator);
 
   }
 
@@ -29,10 +28,10 @@ public class ElevatorCommand extends Command {
   @Override
   protected void execute() {
     if(gearShift == true){
-      Robot.Elevator.up();
+      Robot.m_Elevator.up();
     }
     else {
-      Robot.Elevator.down();
+      Robot.m_Elevator.down();
     }
   
   }

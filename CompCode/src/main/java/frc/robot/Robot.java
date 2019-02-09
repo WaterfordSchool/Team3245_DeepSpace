@@ -11,13 +11,14 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
-import frc.robot.commands.TankDrive;
-import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.ShiftGear;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.*;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
+
+import frc.robot.subsystems.*;
+
 import edu.wpi.cscore.CvSink; //Full HD Camera
 import edu.wpi.cscore.CvSource; //Full HD Camera
 import edu.wpi.cscore.MjpegServer; //Full HD Camera
@@ -36,7 +37,8 @@ public class Robot extends TimedRobot {
 
   public static OI m_oi;
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static ShiftGear m_ShiftGear = new ShiftGear();
+  public static HatchCover m_hatchCover = new HatchCover();
+  public static Elevator m_Elevator = new Elevator();
 
 
   Command m_autonomousCommand;

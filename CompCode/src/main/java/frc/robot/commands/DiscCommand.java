@@ -10,10 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DiscCommand extends Command {
-  boolean pegPush
-  public PegPush(boolean pegPush) {
+  boolean pegPush;
+  public DiscCommand(boolean pegPush2) {
    pegPush = pegPush2;
-    requires(Robot.HatchCover);
+    requires(robot.HatchCover);
   }
 
   // Called just before this Command runs the first time

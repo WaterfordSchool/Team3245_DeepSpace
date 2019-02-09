@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import oi.limelightvision.limelight.frc.LimeLight;
 
@@ -35,7 +36,7 @@ public class DriveTrain extends Subsystem {
   //public final SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightRear);
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
-
+  public final DoubleSolenoid gearPiston; 
   public DriveTrain () {
     leftFront = new WPI_TalonSRX(RobotMap.leftFrontMotorID);
     leftRear = new WPI_TalonSRX(RobotMap.leftRearMotorID);
@@ -52,7 +53,7 @@ public class DriveTrain extends Subsystem {
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
 
-    DoubleSolenoid gearPiston = new DoubleSolenoid(20, 4, 7);
+    gearPiston = new DoubleSolenoid(20, 4, 7);
 
   }
   @Override

@@ -68,7 +68,7 @@ public class OI {
 
     //Peg Push?
     opYellowButton = new JoystickButton(operator, 4); //check the number later
-    opYellowButton.whenPressed(new PegPush(true));
+    opYellowButton.whenPressed(new DiscCommand(true));
 
     //Peg Pull?
     opRedButton = new JoyStickButton(operator, 3); //check the number later
