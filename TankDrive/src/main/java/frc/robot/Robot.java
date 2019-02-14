@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.DriveTrainPID;
 import frc.robot.subsystems.HatchCover;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
@@ -29,6 +30,11 @@ import edu.wpi.cscore.CvSource; //Full HD Camera
 import edu.wpi.cscore.MjpegServer; //Full HD Camera
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Sendable;
+
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 
 
 
@@ -45,8 +51,13 @@ public class Robot extends TimedRobot {
   public static Cargo m_cargo = new Cargo();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static HatchCover m_hatchCover = new HatchCover();
+  public static DriveTrainPID m_driveTrainPID = new DriveTrainPID();
   //public static UsbCamera m_Camera= new UsbCamera("reee", " 10.32.45.182");
 
+  NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+  public  NetworkTableEntry tx = table.getEntry("tx");
+  public  NetworkTableEntry ty = table.getEntry("ty");
+  public  NetworkTableEntry ta = table.getEntry("ta");
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -59,11 +70,11 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     new Thread(() -> {
       UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
-      m_Camera.setResolution(640, 480);
+      m_Camera.setResolution(320, 240);
       m_Camera.setFPS(30);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
 
       Mat source = new Mat();
       Mat output = new Mat();
@@ -86,6 +97,9 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new TankDrive(1.0));
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+    Robot.m_driveTrainPID.m_gyro.reset();
+    SmartDashboard.putNumber("Gyro Angle", Robot.m_driveTrainPID.m_gyro.getAngle());
+
   }
 
 
@@ -169,6 +183,18 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    
+    //read values periodically
+    double x = tx.getDouble(0.0);
+    double y = ty.getDouble(0.0);
+    double area = ta.getDouble(0.0);
+
+    //post to smart dashboard periodically
+    SmartDashboard.putNumber("LimelightX", x);
+    SmartDashboard.putNumber("LimelightY", y);
+    SmartDashboard.putNumber("LimelightArea", area);
+
+    SmartDashboard.putNumber("Gyro Angle", Robot.m_driveTrainPID.m_gyro.getAngle());
   }
 
   /**
@@ -176,5 +202,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    SmartDashboard.putNumber("Gyro Angle", Robot.m_driveTrainPID.m_gyro.getAngle());
+
   }
 }
