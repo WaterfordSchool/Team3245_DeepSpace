@@ -23,7 +23,6 @@ import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
 
-import org.opencv.imgproc.Imgproc;
 
 import edu.wpi.cscore.CvSink; //Full HD Camera
 import edu.wpi.cscore.CvSource; //Full HD Camera
