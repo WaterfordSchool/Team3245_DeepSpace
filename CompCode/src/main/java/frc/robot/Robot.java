@@ -23,6 +23,9 @@ import edu.wpi.cscore.CvSink; //Full HD Camera
 import edu.wpi.cscore.CvSource; //Full HD Camera
 import edu.wpi.cscore.MjpegServer; //Full HD Camera
 import edu.wpi.first.wpilibj.DriverStation;
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
 
 
 
@@ -53,8 +56,25 @@ public class Robot extends TimedRobot {
   public void robotInit() {
 
 
-    CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
-     
+    new Thread(() -> {
+      UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
+      m_Camera.setResolution(320, 240);
+      m_Camera.setFPS(30);
+
+      CvSink cvSink = CameraServer.getInstance().getVideo();
+      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
+
+      Mat source = new Mat();
+      Mat output = new Mat();
+
+      while(!Thread.interrupted()) {
+        cvSink.grabFrame(source);
+        Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+        outputStream.putFrame(output);
+      }
+    }).start();
+
+    
     
     
 

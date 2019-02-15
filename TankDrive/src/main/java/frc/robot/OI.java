@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
+import frc.robot.subsystems.*;
 
 
 /**
@@ -33,6 +34,7 @@ public class OI {
 
   public JoystickButton drYellowButton;
   public JoystickButton drRedButton;
+  public JoystickButton drGreenButton;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -64,6 +66,9 @@ public class OI {
 
     drRedButton = new JoystickButton(driver, 3);
     drRedButton.whenPressed(new PegPushCommand());
+
+    drGreenButton = new JoystickButton(driver, 5);
+    drGreenButton.whenPressed(new SetGyroSetpoint(DriveTrainPID.x_target));
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

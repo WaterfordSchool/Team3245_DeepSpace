@@ -9,52 +9,39 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-/**Class CargoWrist;
- * The commands to pivot the cargo-pickup contraption are written here
- * @author Some Nerd
- * @see Robot.java OI.java Cargo.java
- */
-public class CargoWrist extends Command {
-  /**The constructor method
-   */
-  public CargoWrist() {
-    requires(Robot.m_cargo);
+import edu.wpi.first.wpilibj.smartdashboard.*;
+
+public class SetGyroSetpoint extends Command {
+  private final double m_setpoint;
+
+  public SetGyroSetpoint(double setpoint) {
+    this.m_setpoint = setpoint;
+    requires(Robot.m_driveTrainPID);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
   @Override
-  /**The method called before CargoWrist.execute() runs for the first time
-   * Nothing to see here...
-   */
   protected void initialize() {
+    Robot.m_driveTrainPID.enable();
+    Robot.m_driveTrainPID.setSetpoint(m_setpoint);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
-  /**The method called when a CargoWrist instance is called
-   * @see Cargo.java Robot.java
-   */
   protected void execute() {
-    Robot.m_cargo.activate(Robot.m_oi.getOperator());
+    SmartDashboard.putNumber("Gyro Angle", Robot.m_driveTrainPID.m_gyro.getAngle());
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
-  /**The method which tells the robot if the CargoWheels.execute() command is finished
-   * @return boolean
-   */
   protected boolean isFinished() {
-    return false;
+    return Robot.m_driveTrainPID.onTarget();
   }
 
   // Called once after isFinished returns true
   @Override
-  /**The method that stop the Cargo wrist when CargoWrist.isFinished() returns true
-   * Why does this exist, isFinished() only returns false. America, explain
-   * @return void
-   */
   protected void end() {
   }
 
