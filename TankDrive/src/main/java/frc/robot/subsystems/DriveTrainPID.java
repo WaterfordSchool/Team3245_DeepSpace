@@ -41,7 +41,7 @@ public class DriveTrainPID extends PIDSubsystem {
   public DriveTrainPID() {
     // Intert a subsystem name and PID values here
     super("DriveTrainPID", 1, 0, 0);
-    setAbsoluteTolerance(0.1);
+    setAbsoluteTolerance(0.5);
     getPIDController().setContinuous(false);
     
     // Use these to get going:
