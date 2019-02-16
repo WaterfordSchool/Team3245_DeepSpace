@@ -36,7 +36,6 @@ public class DriveTrain extends Subsystem {
   //public final SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightRear);
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
-  public final DoubleSolenoid gearPiston; 
   public DriveTrain () {
     leftFront = new WPI_TalonSRX(RobotMap.leftFrontMotorID);
     leftRear = new WPI_TalonSRX(RobotMap.leftRearMotorID);
@@ -53,9 +52,8 @@ public class DriveTrain extends Subsystem {
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
 
-    gearPiston = new DoubleSolenoid(20, 4, 7);
 
-  }
+  } 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
@@ -68,6 +66,7 @@ public class DriveTrain extends Subsystem {
       tDrive.tankDrive(-left, right);
   }
 
+
   public void drive(Joystick joy, double kSpeed) {
       drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(3));
   }
@@ -75,7 +74,7 @@ public class DriveTrain extends Subsystem {
    //Instantiate Gear Shift Solenoid
    
 
-
+/*
    public void DownShift(){
       gearPiston.set(DoubleSolenoid.Value.kForward);
    }
@@ -89,7 +88,7 @@ public class DriveTrain extends Subsystem {
     }
    
    
-
+*/
   public LimeLight gLimeLight(){
     return _limelight;
   }

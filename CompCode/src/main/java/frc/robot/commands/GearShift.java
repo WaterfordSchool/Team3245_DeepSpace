@@ -12,9 +12,9 @@ import frc.robot.Robot;
 
 public class GearShift extends Command {
   boolean gearShift;
-  public GearShift(boolean gearShift2) {
-    gearShift = gearShift2;
-    requires(Robot.m_driveTrain);
+  public GearShift(boolean gearShift) {
+    this.gearShift = gearShift;
+    requires(Robot.m_Shifter);
   }
 
   // Called just before this Command runs the first time
@@ -26,10 +26,10 @@ public class GearShift extends Command {
   @Override
   protected void execute() {
     if(gearShift == true){
-      Robot.m_driveTrain.DownShift();
+      Robot.m_Shifter.DownShift();
     }
     else {
-      Robot.m_driveTrain.UpShift();
+      Robot.m_Shifter.UpShift();
     }
   }
 
@@ -42,7 +42,8 @@ public class GearShift extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_driveTrain.ShiftOff();
+   Robot.m_Shifter.ShiftOff();
+   
   }
 
   // Called when another command which requires one or more of the same

@@ -43,6 +43,7 @@ public class Robot extends TimedRobot {
   public static HatchCover m_hatchCover = new HatchCover();
   public static Elevator m_Elevator = new Elevator();
   public static Cargo m_cargo = new Cargo();
+  public static Shifter m_Shifter = new Shifter();
 
 
   Command m_autonomousCommand;

@@ -31,8 +31,8 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  Button drRightTrigger = new JoystickButton (driver, 8);
-  Button drLeftTrigger = new JoystickButton(driver, 7);
+  public Button drRightTrigger;
+  public Button drLeftTrigger;
   Button opBlueButton = new JoystickButton (operator, 1); 
   Button opGreenButton = new JoystickButton (operator, 2);
   Button opRedButton = new JoystickButton (operator, 3);
