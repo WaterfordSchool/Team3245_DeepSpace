@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot; 
 import edu.wpi.first.wpilibj.smartdashboard.*;
 
-public class SetGyroSetpoint extends Command {
+public class LL_Range extends Command {
   private final double m_setpoint;
 
-  public SetGyroSetpoint(double setpoint) {
+  public LL_Range(double setpoint) {
     this.m_setpoint = setpoint;
     requires(Robot.m_driveTrainPID);
     // Use requires() here to declare subsystem dependencies
@@ -24,7 +24,7 @@ public class SetGyroSetpoint extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.PID_return = 0;
+    Robot.PID_return = 1;
     Robot.m_driveTrainPID.enable();
     Robot.m_driveTrainPID.setSetpoint(m_setpoint);
   }

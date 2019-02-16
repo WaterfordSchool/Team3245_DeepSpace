@@ -12,10 +12,11 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.cameraserver.CameraServer;
 import frc.robot.commands.*;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
-import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
+//import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
 
 import frc.robot.subsystems.*;
 
@@ -58,6 +59,7 @@ public class Robot extends TimedRobot {
 
     new Thread(() -> {
       UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
+      CameraServer.getInstance().startAutomaticCapture("Limelight + alpha", 0);
       m_Camera.setResolution(320, 240);
       m_Camera.setFPS(30);
 

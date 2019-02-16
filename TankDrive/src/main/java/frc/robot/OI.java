@@ -34,7 +34,9 @@ public class OI {
 
   public JoystickButton drYellowButton;
   public JoystickButton drRedButton;
-  public JoystickButton drGreenButton;
+  public JoystickButton drLeftBumper;
+  public JoystickButton drRightBumper;
+
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -67,8 +69,11 @@ public class OI {
     drRedButton = new JoystickButton(driver, 3);
     drRedButton.whenPressed(new PegPushCommand());
 
-    drGreenButton = new JoystickButton(driver, 5);
-    drGreenButton.whenPressed(new SetGyroSetpoint(DriveTrainPID.x_target));
+    drLeftBumper = new JoystickButton(driver, 5);
+    drLeftBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.x_target));
+
+    drRightBumper = new JoystickButton(driver, 6);
+    drRightBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.ll_area));
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
