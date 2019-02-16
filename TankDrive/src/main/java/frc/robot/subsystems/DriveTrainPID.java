@@ -41,7 +41,9 @@ public class DriveTrainPID extends PIDSubsystem {
   public DriveTrainPID() {
     // Intert a subsystem name and PID values here
     super("DriveTrainPID", 1, 0, 0);
-    setAbsoluteTolerance(0.5);
+
+    setAbsoluteTolerance(5.0);
+    setInputRange(-27, 27);
     getPIDController().setContinuous(false);
     
     // Use these to get going:
@@ -79,6 +81,6 @@ public class DriveTrainPID extends PIDSubsystem {
   protected void usePIDOutput(double output) {
     // Use output to drive your system, like a motor
     // e.g. yourMotor.set(output);
-    Robot.m_driveTrain.drive(output, output);
+    Robot.m_driveTrain.drive(output, -output);
   }
 }
