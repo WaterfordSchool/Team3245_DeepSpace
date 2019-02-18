@@ -52,10 +52,6 @@ public class DriveTrain extends Subsystem {
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
 
-<<<<<<< HEAD
-    gearPiston = new DoubleSolenoid(0, 4, 7);
-=======
->>>>>>> d6270020994da4552b2f34b5437110f7674ba7dd
 
   } 
   @Override

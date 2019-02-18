@@ -15,19 +15,9 @@ import frc.robot.Robot;
  */
 public class GearShift extends Command {
   boolean gearShift;
-<<<<<<< HEAD
-  /**
-   * 
-   * @param gearShift
-   */
-  public GearShift(boolean gearShift) {
-    this.gearShift = gearShift;
-    requires(Robot.m_driveTrain);
-=======
   public GearShift(boolean gearShift) {
     this.gearShift = gearShift;
     requires(Robot.m_Shifter);
->>>>>>> d6270020994da4552b2f34b5437110f7674ba7dd
   }
 
   // Called just before this Command runs the first time
