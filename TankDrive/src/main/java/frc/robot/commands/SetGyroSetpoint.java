@@ -8,7 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.Robot; 
 import edu.wpi.first.wpilibj.smartdashboard.*;
 
 public class SetGyroSetpoint extends Command {
@@ -20,10 +20,11 @@ public class SetGyroSetpoint extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
-
+  //**  Ruby u big dum */
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.PID_return = 0;
     Robot.m_driveTrainPID.enable();
     Robot.m_driveTrainPID.setSetpoint(m_setpoint);
   }
@@ -43,6 +44,7 @@ public class SetGyroSetpoint extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_driveTrainPID.disable();
   }
 
   // Called when another command which requires one or more of the same

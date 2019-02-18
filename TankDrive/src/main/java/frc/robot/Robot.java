@@ -19,17 +19,20 @@ import frc.robot.subsystems.DriveTrainPID;
 import frc.robot.subsystems.HatchCover;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
-import edu.wpi.first.wpilibj.CameraServer; //Full HD Camera
+import edu.wpi.cscore.VideoSource;
+import edu.wpi.first.cameraserver.CameraServer; //Full HD Camera
+
+import com.sun.jdi.Value;
+
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
 
-
+import edu.wpi.cscore.CameraServerJNI;
 import edu.wpi.cscore.CvSink; //Full HD Camera
 import edu.wpi.cscore.CvSource; //Full HD Camera
 import edu.wpi.cscore.MjpegServer; //Full HD Camera
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Sendable;
-
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -58,6 +61,8 @@ public class Robot extends TimedRobot {
   public  NetworkTableEntry ty = table.getEntry("ty");
   public  NetworkTableEntry ta = table.getEntry("ta");
 
+  public static int PID_return = 0;
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -68,7 +73,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     new Thread(() -> {
-      UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
+      UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture("camera1", 0); // Simple Genius Camera Code wpilib
+      
+      //it said add new camera server object
+      //CameraServer.getInstance().addCamera();
       m_Camera.setResolution(320, 240);
       m_Camera.setFPS(30);
 
@@ -203,5 +211,13 @@ public class Robot extends TimedRobot {
   public void testPeriodic() {
     SmartDashboard.putNumber("Gyro Angle", Robot.m_driveTrainPID.m_gyro.getAngle());
 
+  }
+
+  public static void setPID(int value) {
+    PID_return = value;
+  }
+
+  public int getPID() {
+    return PID_return;
   }
 }

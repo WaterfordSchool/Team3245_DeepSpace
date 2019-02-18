@@ -33,6 +33,7 @@ public class DriveTrainPID extends PIDSubsystem {
   public static final double right90 = 90;
   public static final double x_target = 0;
   public static final double y_target = 0;
+  public static final double ll_area = 10;
 
   NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
   public  NetworkTableEntry tx = table.getEntry("tx");
@@ -45,8 +46,10 @@ public class DriveTrainPID extends PIDSubsystem {
 
   public DriveTrainPID() {
     // Intert a subsystem name and PID values here
-    super("DriveTrainPID", 1, 0, 0);
-    setAbsoluteTolerance(0.1);
+    super("DriveTrainPID", 0.1, 0, 0);
+  
+    //setInputRange(-27, 27);
+    setAbsoluteTolerance(1.0);
     getPIDController().setContinuous(false);
     
     // Use these to get going:
@@ -69,6 +72,7 @@ public class DriveTrainPID extends PIDSubsystem {
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0);
+        double return_value = 10;
     
         //post to smart dashboard periodically
         SmartDashboard.putNumber("LimelightX", x);
@@ -77,13 +81,25 @@ public class DriveTrainPID extends PIDSubsystem {
     // Return your input value for the PID loop
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return x;
+    if (Robot.PID_return == 0){
+      return_value = x;
+    }
+    else if (Robot.PID_return == 1){
+      return_value = area;
+    }
+    return return_value;
   }
 
   @Override
   protected void usePIDOutput(double output) {
     // Use output to drive your system, like a motor
     // e.g. yourMotor.set(output);
-    Robot.m_driveTrain.drive(output, output);
+ 
+    if (Robot.PID_return == 0){
+      Robot.m_driveTrain.drive(output, -output);
+    }
+    else if (Robot.PID_return == 1){
+      Robot.m_driveTrain.drive(output, output);
+    }  
   }
 }
