@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class HatchCover extends Subsystem {
   
-  DoubleSolenoid PegPush = new DoubleSolenoid(20,0,1);
-  DoubleSolenoid DiscMech = new DoubleSolenoid(20,2,3);
+  DoubleSolenoid PegPush = new DoubleSolenoid(1,0,1);
+  DoubleSolenoid DiscMech = new DoubleSolenoid(1,2,3);
 
   public HatchCover(){
     PegPush.set(DoubleSolenoid.Value.kReverse);

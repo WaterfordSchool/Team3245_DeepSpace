@@ -19,6 +19,11 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 /**
  * Add your docs here.
  */
+/**Class DriveTrain
+ * @author Some nerd
+ * @see frc.robot.Robot
+ 
+ */
 public class DriveTrainPID extends PIDSubsystem {
   /**
    * Add your docs here.

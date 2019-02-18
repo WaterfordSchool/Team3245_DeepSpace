@@ -31,16 +31,16 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  Button drRightTrigger = new JoystickButton (driver, 8);
-  Button drLeftTrigger = new JoystickButton(driver, 7);
-  Button opBlueButton = new JoystickButton (operator, 1); 
-  Button opGreenButton = new JoystickButton (operator, 2);
-  Button opRedButton = new JoystickButton (operator, 3);
-  Button opYellowButton = new JoystickButton (operator, 4);
-  Button opLeftBumper = new JoystickButton (operator, 5);
-  Button opRightBumper = new JoystickButton (operator, 6);
-  Button opLeftTrigger = new JoystickButton (operator, 7);
-  Button opRightTrigger = new JoystickButton (operator, 8);
+  Button drRightTrigger   = new JoystickButton (driver, 8);
+  Button drLeftTrigger    = new JoystickButton(driver, 7);
+  Button opBlueButton     = new JoystickButton (operator, 1); 
+  Button opGreenButton    = new JoystickButton (operator, 2);
+  Button opRedButton      = new JoystickButton (operator, 3);
+  Button opYellowButton   = new JoystickButton (operator, 4);
+  Button opLeftBumper     = new JoystickButton (operator, 5);
+  Button opRightBumper    = new JoystickButton (operator, 6);
+  Button opLeftTrigger    = new JoystickButton (operator, 7);
+  Button opRightTrigger   = new JoystickButton (operator, 8);
 
 
   // There are a few additional built in buttons you can use. Additionally,
