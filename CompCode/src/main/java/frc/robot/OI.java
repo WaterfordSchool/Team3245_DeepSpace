@@ -30,7 +30,7 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-
+  // Do not forget to add the modifiers to the instantiation (i.e public Button testButton = new JoystickButton(stick, buttonNumber) so that they can be accessed throughout the class)
   public Button drRightTrigger;
   public Button drLeftTrigger;
   Button opBlueButton = new JoystickButton (operator, 1); 
