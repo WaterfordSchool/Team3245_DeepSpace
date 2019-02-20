@@ -10,8 +10,13 @@ package frc.robot.commands;
 import frc.robot.*;
 
 import edu.wpi.first.wpilibj.command.Command;
-
+/**Class ElevatorCommand
+ * Operates the pulley system of the elevating mechanism
+ */
 public class ElevatorCommand extends Command {
+  /**The constructor method for the ElevatorCommand
+   * 
+   */
   public ElevatorCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
