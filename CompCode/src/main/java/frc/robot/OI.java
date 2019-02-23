@@ -30,19 +30,6 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-<<<<<<< HEAD
-  // Do not forget to add the modifiers to the instantiation (i.e public Button testButton = new JoystickButton(stick, buttonNumber) so that they can be accessed throughout the class)
-  public Button drRightTrigger;
-  public Button drLeftTrigger;
-  Button opBlueButton = new JoystickButton (operator, 1); 
-  Button opGreenButton = new JoystickButton (operator, 2);
-  Button opRedButton = new JoystickButton (operator, 3);
-  Button opYellowButton = new JoystickButton (operator, 4);
-  Button opLeftBumper = new JoystickButton (operator, 5);
-  Button opRightBumper = new JoystickButton (operator, 6);
-  Button opLeftTrigger = new JoystickButton (operator, 7);
-  Button opRightTrigger = new JoystickButton (operator, 8);
-=======
 
   Button drRightTrigger   = new JoystickButton (driver, 8);
   Button drLeftTrigger    = new JoystickButton(driver, 7);
@@ -54,7 +41,6 @@ public class OI {
   Button opRightBumper    = new JoystickButton (operator, 6);
   Button opLeftTrigger    = new JoystickButton (operator, 7);
   Button opRightTrigger   = new JoystickButton (operator, 8);
->>>>>>> 32c9e31ad154b4cbbedaac781a28c7a6bf3a2aa4
 
 
   // There are a few additional built in buttons you can use. Additionally,
