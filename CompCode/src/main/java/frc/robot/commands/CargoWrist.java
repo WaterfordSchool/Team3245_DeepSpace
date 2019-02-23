@@ -12,7 +12,7 @@ import frc.robot.Robot;
 /**Class CargoWrist;
  * The commands to pivot the cargo-pickup contraption are written here
  * @author Some Nerd
- * @see Robot.java OI.java Cargo.java
+ * @see {@link frc.robot.Robot} {@link frc.robot.OI} {@link frc.robot.subsystems.Cargo}
  */
 public class CargoWrist extends Command {
   /**The constructor method

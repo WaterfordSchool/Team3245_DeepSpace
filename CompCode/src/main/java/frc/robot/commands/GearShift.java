@@ -9,7 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-
+/**Class GearShift
+ * @author idk somebody
+ * who even bothers to check the comments
+ */
 public class GearShift extends Command {
   boolean gearShift;
   public GearShift(boolean gearShift) {

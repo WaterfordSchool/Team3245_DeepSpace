@@ -16,8 +16,13 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class HatchCover extends Subsystem {
   
+<<<<<<< HEAD
   DoubleSolenoid PegPush = new DoubleSolenoid(21,0,1); //The second PCM's number is 21
   DoubleSolenoid DiscMech = new DoubleSolenoid(21,2,3); // The second PCM's number is 21
+=======
+  DoubleSolenoid PegPush = new DoubleSolenoid(0,0,1);
+  DoubleSolenoid DiscMech = new DoubleSolenoid(0,2,3);
+>>>>>>> 32c9e31ad154b4cbbedaac781a28c7a6bf3a2aa4
 
   public HatchCover(){
     PegPush.set(DoubleSolenoid.Value.kReverse);
