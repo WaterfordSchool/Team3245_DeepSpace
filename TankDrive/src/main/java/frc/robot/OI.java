@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
+import frc.robot.commands.Prototype1;
 import frc.robot.subsystems.*;
 
 
@@ -38,6 +39,7 @@ public class OI {
   public JoystickButton drRightBumper;
   public JoystickButton drRightTrigger;
   public JoystickButton drLeftTrigger;
+  public JoystickButton drStartButton;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -81,6 +83,9 @@ public class OI {
 
     drLeftTrigger = new JoystickButton(driver, 7);
     drLeftTrigger.whenPressed(new DiscProto1Up());
+
+    drStartButton = new JoystickButton(driver, 9);
+    drStartButton.whenPressed(new Prototype1());
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

@@ -26,7 +26,7 @@ public class RobotMap {
   public static int rightRearMotorID = 6;
 
   //Elevator TalonSRX Motor Controllers IDs
-
+  public static int DiscPrototypeID = 4;
   public static int ElevatorMotorID = 5;
   public static int SnakeWristMotorID = 6;
   public static int SnakeWheelsID = 8;

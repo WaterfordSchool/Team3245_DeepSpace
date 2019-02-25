@@ -14,7 +14,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class DiscPrototype1 extends Subsystem {
  
-  public final WPI_TalonSRX prototypeMotorGang1 = new WPI_TalonSRX(1);
+  public final WPI_TalonSRX prototypeMotorGang1 = new WPI_TalonSRX(4);
   
   public void protoDown() {
 
