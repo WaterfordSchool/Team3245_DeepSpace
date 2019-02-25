@@ -61,7 +61,7 @@ public class Robot extends TimedRobot {
     new Thread(() -> {
       UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
       CameraServer.getInstance().startAutomaticCapture("Limelight + alpha", 0);
-      m_Camera.setResolution(320, 240);
+      m_Camera.setResolution(320, 240); 
       m_Camera.setFPS(30);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
