@@ -36,7 +36,8 @@ public class OI {
   public JoystickButton drRedButton;
   public JoystickButton drLeftBumper;
   public JoystickButton drRightBumper;
-
+  public JoystickButton drRightTrigger;
+  public JoystickButton drLeftTrigger;
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -74,6 +75,12 @@ public class OI {
 
     drRightBumper = new JoystickButton(driver, 6);
     drRightBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.ll_area));
+
+    drRightTrigger = new JoystickButton(driver, 8);
+    drRightTrigger.whenPressed(new DiscProto1Command());
+
+    drLeftTrigger = new JoystickButton(driver, 7);
+    drLeftTrigger.whenPressed(new DiscProto1Up());
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

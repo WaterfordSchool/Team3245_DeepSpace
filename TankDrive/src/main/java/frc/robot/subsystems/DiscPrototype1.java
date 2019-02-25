@@ -23,7 +23,7 @@ public class DiscPrototype1 extends Subsystem {
   }
   
   public void protoUp(){
-    prototypeMotorGang1.set(0.7);
+    prototypeMotorGang1.set(-0.7);
   }
 
   @Override
