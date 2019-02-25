@@ -37,9 +37,11 @@ public class OI {
   public JoystickButton drRedButton;
   public JoystickButton drLeftBumper;
   public JoystickButton drRightBumper;
-  public JoystickButton drRightTrigger;
   public JoystickButton drLeftTrigger;
+  public JoystickButton drRightTrigger;
   public JoystickButton drStartButton;
+
+
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -86,6 +88,7 @@ public class OI {
 
     drStartButton = new JoystickButton(driver, 9);
     drStartButton.whenPressed(new Prototype1());
+
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
