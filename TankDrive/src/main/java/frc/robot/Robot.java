@@ -18,6 +18,7 @@ import frc.robot.subsystems.DiscPrototype1;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.DriveTrainPID;
 import frc.robot.subsystems.HatchCover;
+import frc.robot.subsystems.Prototype1;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.cscore.VideoSource;
@@ -55,6 +56,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static HatchCover m_hatchCover = new HatchCover();
   public static DriveTrainPID m_driveTrainPID = new DriveTrainPID();
+  public static Prototype1 m_Prototype1 = new Prototype1();
   public static DiscPrototype1 m_discProto = new DiscPrototype1();
   //public static UsbCamera m_Camera= new UsbCamera("reee", " 10.32.45.182");
 
