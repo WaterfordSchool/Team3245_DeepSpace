@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * Add your docs here.
  */
 public class Prototype1 extends Subsystem {
-  DoubleSolenoid crashOnRoadExcuses = new DoubleSolenoid(20, 0, 1);
+  DoubleSolenoid crashOnRoadExcuses = new DoubleSolenoid(20, 1, 3);
 
   public void PrototypeForward(){
     crashOnRoadExcuses.set(DoubleSolenoid.Value.kForward);
