@@ -25,6 +25,9 @@ public class DiscPrototype1 extends Subsystem {
   public void protoUp(){
     prototypeMotorGang1.set(-0.7);
   }
+  public void protoStaph(){
+    prototypeMotorGang1.set(0);
+  }
 
   @Override
   public void initDefaultCommand() {
