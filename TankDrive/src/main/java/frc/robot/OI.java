@@ -79,13 +79,13 @@ public class OI {
     drRightBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.ll_area));
 
     drRightTrigger = new JoystickButton(driver, 8);
-    drRightTrigger.whenPressed(new DiscProto1Command());
+    drRightTrigger.whileHeld(new DiscProto1Command());
 
     drLeftTrigger = new JoystickButton(driver, 7);
-    drLeftTrigger.whenPressed(new DiscProto1Up());
+    drLeftTrigger.whileHeld(new DiscProto1Up());
 
     drStartButton = new JoystickButton(driver, 9);
-    drStartButton.whenPressed(new Prototype1());
+    drStartButton.whileHeld(new Prototype1());
 
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());

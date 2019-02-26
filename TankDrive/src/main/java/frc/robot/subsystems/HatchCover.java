@@ -20,7 +20,7 @@ public class HatchCover extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   //new solenoid called
-  DoubleSolenoid LittleDog = new DoubleSolenoid(20, 0, 2);
+  DoubleSolenoid LittleDog = new DoubleSolenoid(0, 0, 2);
   
 	public HatchCover(){
 		LittleDog.set(DoubleSolenoid.Value.kReverse);
@@ -29,7 +29,7 @@ public class HatchCover extends Subsystem {
 
   public void DiscScoreForward(){
     LittleDog.set(DoubleSolenoid.Value.kForward);
-  }
+  } 
   public void DiscScoreReverse(){
     LittleDog.set(DoubleSolenoid.Value.kReverse);
   }

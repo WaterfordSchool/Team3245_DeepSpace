@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  * Add your docs here.
  */
 public class Shifter extends Subsystem {
-public final DoubleSolenoid gearPiston = new DoubleSolenoid(20, 4, 7); //Drivetrain PCM is 20
+public final DoubleSolenoid gearPiston = new DoubleSolenoid(0, 4, 7); //Drivetrain PCM is 20
 
 
 public void DownShift(){
