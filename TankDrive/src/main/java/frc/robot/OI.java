@@ -44,6 +44,8 @@ public class OI {
   public JoystickButton drRedButton; 
   public JoystickButton drLeftTrigger;
 
+
+
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -89,10 +91,11 @@ public class OI {
 
     drStartButton = new JoystickButton(driver, 9);
     drStartButton.whileHeld(new Prototype1());
+//
+    //SmartDashboard Button
 
     drLeftTrigger = new JoystickButton(driver,6);
    // drLeftTrigger.whenPressed(new GearShift());
-
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
 
