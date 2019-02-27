@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 import frc.robot.commands.TankDrive;
+import frc.robot.subsystems.*;
 import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DiscPrototype1;
 import frc.robot.subsystems.DriveTrain;
@@ -58,6 +59,7 @@ public class Robot extends TimedRobot {
   public static DriveTrainPID m_driveTrainPID = new DriveTrainPID();
   public static Prototype1 m_Prototype1 = new Prototype1();
   public static DiscPrototype1 m_discProto = new DiscPrototype1();
+  public static Shifter m_Shifter = new Shifter(); 
   //public static UsbCamera m_Camera= new UsbCamera("reee", " 10.32.45.182");
 
   NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
