@@ -37,13 +37,8 @@ public class OI {
   public JoystickButton opRedButton;
   public JoystickButton drLeftBumper;
   public JoystickButton drRightBumper;
-<<<<<<< HEAD
-  public JoystickButton drLeftTrigger;
-  public JoystickButton drRightTrigger;
-=======
   public JoystickButton drRightTrigger;
   public JoystickButton opLeftTrigger;
->>>>>>> 00b658abab4dfef3614af97c327493811c98c6c1
   public JoystickButton drStartButton;
   public JoystickButton drYellowButton;
   public JoystickButton drRedButton; 
@@ -96,14 +91,11 @@ public class OI {
 
     drStartButton = new JoystickButton(driver, 9);
     drStartButton.whileHeld(new Prototype1());
-
-<<<<<<< HEAD
-
+//
     //SmartDashboard Button
-=======
+
     drLeftTrigger = new JoystickButton(driver,6);
-    drLeftTrigger.whenPressed(new GearShift());
->>>>>>> 00b658abab4dfef3614af97c327493811c98c6c1
+   // drLeftTrigger.whenPressed(new GearShift());
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
 
