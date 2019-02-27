@@ -33,13 +33,21 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  public JoystickButton drYellowButton;
-  public JoystickButton drRedButton;
+  public JoystickButton opYellowButton;
+  public JoystickButton opRedButton;
   public JoystickButton drLeftBumper;
   public JoystickButton drRightBumper;
+<<<<<<< HEAD
   public JoystickButton drLeftTrigger;
   public JoystickButton drRightTrigger;
+=======
+  public JoystickButton drRightTrigger;
+  public JoystickButton opLeftTrigger;
+>>>>>>> 00b658abab4dfef3614af97c327493811c98c6c1
   public JoystickButton drStartButton;
+  public JoystickButton drYellowButton;
+  public JoystickButton drRedButton; 
+  public JoystickButton drLeftTrigger;
 
 
 
@@ -68,11 +76,11 @@ public class OI {
     driver = new Joystick(0);
     operator = new Joystick(1);
 
-    drYellowButton = new JoystickButton(driver, 4);
-    drYellowButton.whenPressed(new PegPushCommand());
+    opYellowButton = new JoystickButton(operator, 4);
+    opYellowButton.whenPressed(new PegPushCommand());
 
-    drRedButton = new JoystickButton(driver, 3);
-    drRedButton.whenPressed(new PegPushCommand());
+    opRedButton = new JoystickButton(operator, 3);
+    opRedButton.whenPressed(new PegPushCommand());
 
     drLeftBumper = new JoystickButton(driver, 5);
     drLeftBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.x_target));
@@ -81,16 +89,21 @@ public class OI {
     drRightBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.ll_area));
 
     drRightTrigger = new JoystickButton(driver, 8);
-    drRightTrigger.whenPressed(new DiscProto1Command());
+    drRightTrigger.whileHeld(new DiscProto1Command());
 
-    drLeftTrigger = new JoystickButton(driver, 7);
-    drLeftTrigger.whenPressed(new DiscProto1Up());
+    opLeftTrigger = new JoystickButton(operator, 7);
+    opLeftTrigger.whileHeld(new DiscProto1Up());
 
     drStartButton = new JoystickButton(driver, 9);
-    drStartButton.whenPressed(new Prototype1());
+    drStartButton.whileHeld(new Prototype1());
 
+<<<<<<< HEAD
 
     //SmartDashboard Button
+=======
+    drLeftTrigger = new JoystickButton(driver,6);
+    drLeftTrigger.whenPressed(new GearShift());
+>>>>>>> 00b658abab4dfef3614af97c327493811c98c6c1
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
 

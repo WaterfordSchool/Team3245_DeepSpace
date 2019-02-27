@@ -7,28 +7,33 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 /**
  * Add your docs here.
  */
-public class Prototype1 extends Subsystem {
-  DoubleSolenoid crashOnRoadExcuses = new DoubleSolenoid(0, 1, 3);
+public class Shifter extends Subsystem {
+public final DoubleSolenoid gearPiston = new DoubleSolenoid(0, 4, 7); //Drivetrain PCM is 20
 
-  public void PrototypeForward(){
-    crashOnRoadExcuses.set(DoubleSolenoid.Value.kForward);
-  }
 
-  public void PrototypeReverse(){
-    crashOnRoadExcuses.set(DoubleSolenoid.Value.kReverse);
-  }
+public void DownShift(){
+  gearPiston.set(DoubleSolenoid.Value.kForward);
+}
 
-  public void PrototypeOff(){
-    crashOnRoadExcuses.set(DoubleSolenoid.Value.kOff);
-  }
-  
+public void UpShift(){
+ gearPiston.set(DoubleSolenoid.Value.kReverse);
+}
+
+public void ShiftOff (){
+  gearPiston.set(DoubleSolenoid.Value.kOff);
+}
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+
   @Override
   public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
   }
 }

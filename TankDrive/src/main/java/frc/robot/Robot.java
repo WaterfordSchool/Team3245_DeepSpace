@@ -11,7 +11,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.GearShift;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DiscPrototype1;
@@ -19,6 +20,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.DriveTrainPID;
 import frc.robot.subsystems.HatchCover;
 import frc.robot.subsystems.Prototype1;
+import frc.robot.subsystems.Shifter;
 import frc.robot.RobotMap;
 import edu.wpi.cscore.UsbCamera; //Full HD camera
 import edu.wpi.cscore.VideoSource;
@@ -58,6 +60,7 @@ public class Robot extends TimedRobot {
   public static DriveTrainPID m_driveTrainPID = new DriveTrainPID();
   public static Prototype1 m_Prototype1 = new Prototype1();
   public static DiscPrototype1 m_discProto = new DiscPrototype1();
+  public static GearShift m_Shifter = new Shifter();
   //public static UsbCamera m_Camera= new UsbCamera("reee", " 10.32.45.182");
 
   NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");

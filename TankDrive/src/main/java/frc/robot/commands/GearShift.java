@@ -9,12 +9,15 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-
-public class DiscProto1Up extends Command {
-  public DiscProto1Up() {
-    
-    requires(Robot.m_discProto);
-
+/**Class GearShift
+ * @author idk somebody
+ * who even bothers to check the comments
+ */
+public class GearShift extends Command {
+  boolean gearShift;
+  public GearShift(boolean gearShift) {
+    this.gearShift = gearShift;
+    requires(Robot.m_Shifter);
   }
 
   // Called just before this Command runs the first time
@@ -25,9 +28,12 @@ public class DiscProto1Up extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.m_discProto.protoUp();
-
+    if(gearShift == true){
+      Robot.m_Shifter.DownShift();
+    }
+    else {
+      Robot.m_Shifter.UpShift();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,7 +45,8 @@ public class DiscProto1Up extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_discProto.protoStaph();
+   Robot.Shifter.ShiftOff();
+   
   }
 
   // Called when another command which requires one or more of the same
