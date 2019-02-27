@@ -20,10 +20,10 @@ public class RobotMap {
   // public static int rightMotor = 2;
 
   //Drivetrain TalonSRX Motor Controllers IDs
-  public static int leftFrontMotorID = 1;
-  public static int leftRearMotorID = 5;
-  public static int rightFrontMotorID = 2;
-  public static int rightRearMotorID = 6;
+  public static int leftFrontMotorID = 2;
+  public static int leftRearMotorID = 6;
+  public static int rightFrontMotorID = 1;
+  public static int rightRearMotorID = 5;
 
   //Elevator TalonSRX Motor Controllers IDs
   public static int DiscPrototypeID = 4;
