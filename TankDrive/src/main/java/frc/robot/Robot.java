@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import frc.robot.commands.GearShift;
+import frc.robot.commands.GearShift;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.DiscPrototype1;

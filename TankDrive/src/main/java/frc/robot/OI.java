@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
 import frc.robot.commands.Prototype1;
 import frc.robot.subsystems.*;
+import frc.robot.commands.GearShift;
 
 
 /**
@@ -90,12 +91,14 @@ public class OI {
     opLeftTrigger.whileHeld(new DiscProto1Up());
 
     drStartButton = new JoystickButton(driver, 9);
-    drStartButton.whileHeld(new Prototype1());
-//
-    //SmartDashboard Button
+    drStartButton.whenPressed(new Prototype1());
 
     drLeftTrigger = new JoystickButton(driver,6);
-   // drLeftTrigger.whenPressed(new GearShift());
+    drLeftTrigger.whenPressed(new GearShift(false));
+    drLeftTrigger.whenReleased(new GearShift(true));
+
+
+
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
 

@@ -29,7 +29,6 @@ public class Prototype1 extends Command {
     } else {
       Robot.m_Prototype1.PrototypeReverse();
     }
-    hardOn=!hardOn;
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -42,6 +41,7 @@ public class Prototype1 extends Command {
   @Override
   protected void end() {
     Robot.m_Prototype1.PrototypeOff();
+    hardOn=!hardOn;
   }
 
   // Called when another command which requires one or more of the same

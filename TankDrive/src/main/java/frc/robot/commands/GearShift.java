@@ -34,6 +34,7 @@ public class GearShift extends Command {
     else {
       Robot.m_Shifter.UpShift();
     }
+    gearShift= !gearShift;
   }
 
   // Make this return true when this Command no longer needs to run execute()
