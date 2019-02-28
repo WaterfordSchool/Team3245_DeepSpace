@@ -61,7 +61,7 @@ public class DriveTrain extends Subsystem {
   }
 
   public void drive(double left, double right) {
-      tDrive.tankDrive(right, -left);
+      tDrive.tankDrive(-left, right );
   }
 
   public void drive(Joystick joy, double kSpeed) {

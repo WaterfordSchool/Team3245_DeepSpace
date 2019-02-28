@@ -47,6 +47,7 @@ public class OI {
 
 
 
+
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -78,26 +79,24 @@ public class OI {
     opRedButton = new JoystickButton(operator, 3);
     opRedButton.whenPressed(new PegPushCommand());
 
-    drLeftBumper = new JoystickButton(driver, 5);
-    drLeftBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.x_target));
-
-    drRightBumper = new JoystickButton(driver, 6);
-    drRightBumper.whenPressed(new SetGyroSetpoint(DriveTrainPID.ll_area));
+    
 
     drRightTrigger = new JoystickButton(driver, 8);
     drRightTrigger.whileHeld(new DiscProto1Command());
 
-    opLeftTrigger = new JoystickButton(operator, 7);
-    opLeftTrigger.whileHeld(new DiscProto1Up());
+    drLeftTrigger = new JoystickButton(driver, 7);
+    drLeftTrigger.whileHeld(new DiscProto1Up());
 
     drStartButton = new JoystickButton(driver, 9);
     drStartButton.whenPressed(new Prototype1());
 
-    drLeftTrigger = new JoystickButton(driver,6);
-    drLeftTrigger.whenPressed(new GearShift(false));
-    drLeftTrigger.whenReleased(new GearShift(true));
+    drLeftBumper = new JoystickButton(driver, 5);
+    drLeftBumper.whenReleased(new GearShift(false));
+    
+    drRightBumper = new JoystickButton(driver, 6);
+    drRightBumper.whenReleased(new GearShift(true));
 
-
+    
 
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
