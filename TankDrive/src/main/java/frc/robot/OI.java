@@ -91,10 +91,10 @@ public class OI {
     drStartButton.whenPressed(new Prototype1());
 
     drLeftBumper = new JoystickButton(driver, 5);
-    drLeftBumper.whenReleased(new GearShift(false));
-    
+    drLeftBumper.whenPressed(new GearShift(false));
+
     drRightBumper = new JoystickButton(driver, 6);
-    drRightBumper.whenReleased(new GearShift(true));
+    drRightBumper.whenPressed(new GearShift(true));
 
     
 
