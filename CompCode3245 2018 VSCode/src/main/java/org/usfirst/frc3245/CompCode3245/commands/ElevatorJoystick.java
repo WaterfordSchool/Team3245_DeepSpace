@@ -10,7 +10,7 @@ import org.usfirst.frc3245.CompCode3245.RobotMap;
  *
  */
 public class ElevatorJoystick extends Command {
-    private boolean limitState;
+    private int limitState;
 	
     public ElevatorJoystick() {
 
@@ -24,8 +24,8 @@ public class ElevatorJoystick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         limitState = Robot.elevator.elevatorLimitState();
-        SmartDashboard.putBoolean("Elevator Limit State", limitState);
-        if (limitState == false) {
+        SmartDashboard.putNumber("Elevator Limit State", limitState);
+        if (limitState > 100) {
             Robot.elevator.activate(Robot.oi.getOperator());
         }
         else {

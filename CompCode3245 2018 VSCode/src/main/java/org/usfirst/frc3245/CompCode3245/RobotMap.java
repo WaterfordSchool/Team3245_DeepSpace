@@ -102,8 +102,8 @@ public class RobotMap {
         LeftCartArm = new WPI_TalonSRX(9);
         RightCartArm = new WPI_TalonSRX(10);
         
-        LeftIntakeMotor = new WPI_TalonSRX(8);
-        RightIntakeMotor = new WPI_TalonSRX(7);
+        LeftIntakeMotor = new WPI_TalonSRX(31);
+        RightIntakeMotor = new WPI_TalonSRX(30);
         
         WristMotor = new WPI_TalonSRX(42);
           

@@ -160,7 +160,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putNumber("Gyro heading is :", RobotMap.driveTrainGyro1.getAngle() );//added by LW late on 2/1
+        //SmartDashboard.putNumber("Elevator Limit State:", Robot.elevator.elevatorLimitState() );//added by LW late on 2/1
     } 
 
     @Override
