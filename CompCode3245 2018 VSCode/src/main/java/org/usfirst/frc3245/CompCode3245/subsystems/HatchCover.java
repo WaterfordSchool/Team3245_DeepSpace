@@ -20,21 +20,6 @@ public class HatchCover extends Subsystem {
   Solenoid DiscMech = new Solenoid(20,5);
 
   //What is this method used for?
-  /*public HatchCover(){
-    PegPush.set(Solenoid.Value.kReverse);
-  }*/
-
-  public void DiscScoreFoward(){
-    PegPush.set(true);
-  }
-
-  public void DiscScoreReverse(){
-    PegPush.set(false);
-  }
-
-  public void DiscScoreOff(){
-    PegPush.close();
-  }
 
   public void DiscCartForward(){
     DiscMech.set(true);
@@ -47,7 +32,18 @@ public class HatchCover extends Subsystem {
   public void DiscCartOff(){
     DiscMech.close();
   }
+  
+  public void DiscScoreFoward(){
+    PegPush.set(true);
+  }
 
+  public void DiscScoreReverse(){
+    PegPush.set(false);
+  }
+
+  public void DiscScoreOff(){
+    PegPush.close();
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
