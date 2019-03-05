@@ -97,7 +97,7 @@ public class Robot extends TimedRobot {
         cvSink.grabFrame(source);
         Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
         outputStream.putFrame(output);
-      }
+      }    
     }).start();
 
 
