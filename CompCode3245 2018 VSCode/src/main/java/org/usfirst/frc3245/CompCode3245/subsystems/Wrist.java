@@ -47,11 +47,11 @@ public class Wrist extends Subsystem {
     
 
     public void activate(double left, double blank) {
-    	RobotMap.elevatorEDrive.arcadeDrive(left, blank);
+    	RobotMap.wristEDrive.arcadeDrive(left, blank);
     }
     public void activate(Joystick joy) {
     	//activate(joy.getAxis(AxisType.kThrottle), 0);
-    	activate(joy.getRawAxis(5),0);
+    	WM.set(joy.getRawAxis(3));
     }
     public void up() {
     	WM.set(.7);

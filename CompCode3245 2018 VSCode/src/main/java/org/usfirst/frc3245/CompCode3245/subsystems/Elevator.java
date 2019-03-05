@@ -54,7 +54,8 @@ public class Elevator extends Subsystem {
     }
     public void activate(Joystick joy) {
     	//activate(joy.getAxis(AxisType.kThrottle), 0);
-    	activate(joy.getY(),0);
+        //activate(joy.getY(),0);
+        ElevatorMotor.set(joy.getY());
     }
     public void up() {
     	ElevatorMotor.set(.7);
