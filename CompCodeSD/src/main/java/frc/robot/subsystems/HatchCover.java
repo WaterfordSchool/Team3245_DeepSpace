@@ -21,10 +21,10 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class HatchCover extends Subsystem {
   
-  DoubleSolenoid PegPush = new DoubleSolenoid(21,0,1); //The second PCM's number is 21
-  DoubleSolenoid DiscMech = new DoubleSolenoid(21,2,3); // The second PCM's number is 21
+  //DoubleSolenoid PegPush = new DoubleSolenoid(21,0,1); //The second PCM's number is 21
+  //DoubleSolenoid DiscMech = new DoubleSolenoid(21,2,3); // The second PCM's number is 21
   WPI_TalonSRX DiscMech2 = new WPI_TalonSRX(RobotMap.DiscMech2ID);
-
+/*
   public HatchCover(){
     PegPush.set(DoubleSolenoid.Value.kReverse);
   }
@@ -52,15 +52,16 @@ public class HatchCover extends Subsystem {
   public void DiscCartOff(){
     DiscMech.set(DoubleSolenoid.Value.kOff);
   }
+  */
 
   //New Disc Mech
 
   public void DiscDown(){
-    DiscMech2.set(0.6);
+    DiscMech2.set(0.8);
   }
 
   public void DiscUp(){
-    DiscMech2.set(-0.6);
+    DiscMech2.set(-0.8);
   }
 
   public void DiscStop(){

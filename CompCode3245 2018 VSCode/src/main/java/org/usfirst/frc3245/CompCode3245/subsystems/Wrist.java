@@ -15,6 +15,7 @@ import org.usfirst.frc3245.CompCode3245.Robot;
 import org.usfirst.frc3245.CompCode3245.RobotMap;
 import org.usfirst.frc3245.CompCode3245.commands.*;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -43,5 +44,29 @@ public class Wrist extends Subsystem {
     public void DontMove() {
     	WM.set(0);
     }
+    
+
+    public void activate(double left, double blank) {
+    	RobotMap.wristEDrive.arcadeDrive(left, blank);
+    }
+    public void activate(Joystick joy) {
+    	//activate(joy.getAxis(AxisType.kThrottle), 0);
+    	WM.set(joy.getRawAxis(3));
+    }
+    public void up() {
+    	WM.set(.7);
+    }
+    public void down() {
+    	WM.set(-.7);
+    }
+    /*
+    public int elevatorLimitState() {
+        return elevatorLimit.getAverageValue();
+    }
+    */
+    public void stop() {
+    	WM.set(0);
+    }
 }
+
 

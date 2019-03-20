@@ -7,14 +7,15 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 
 /**
  * Add your docs here.
  */
 public class Shifter extends Subsystem {
-public final DoubleSolenoid gearPiston = new DoubleSolenoid(20, 4, 7); //Drivetrain PCM is 20
+  public final DoubleSolenoid gearPiston = new DoubleSolenoid(20, 4, 7); //Drivetrain PCM is 20
 
 
 public void DownShift(){

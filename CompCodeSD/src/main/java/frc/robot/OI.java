@@ -6,13 +6,12 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+import edu.wpi.first.wpilibj.buttons.*;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
-import frc.robot.commands.Prototype1;
-import frc.robot.subsystems.*;
-import frc.robot.commands.GearShift;
 
 
 /**
@@ -20,8 +19,6 @@ import frc.robot.commands.GearShift;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-
-  boolean flipflop = false;
 
   public Joystick driver; //= new Joystick(RobotMap.driverJoystick.value);
   public Joystick operator; //= new Joystick(RobotMap.operatorJoystick.value);
@@ -34,18 +31,21 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  public JoystickButton opYellowButton;
-  public JoystickButton opRedButton;
-  public JoystickButton drLeftBumper;
-  public JoystickButton drRightBumper;
-  public JoystickButton drRightTrigger;
-  public JoystickButton opLeftTrigger;
-  public JoystickButton drStartButton;
-  public JoystickButton drYellowButton;
-  public JoystickButton drRedButton; 
-  public JoystickButton drLeftTrigger;
+  Button drRightTrigger   = new JoystickButton (driver, 8);
+  Button drLeftTrigger    = new JoystickButton(driver, 7);
+  Button drYellowButton   = new JoystickButton(driver, 4); 
+  Button drBLueButton     = new JoystickButton(driver, 1);  
+  Button drGreenButton    = new JoystickButton(driver, 2);
+  Button drRedButton      = new JoystickButton(driver, 3);
 
-
+  Button opBlueButton     = new JoystickButton (operator, 1); 
+  Button opGreenButton    = new JoystickButton (operator, 2);
+  Button opRedButton      = new JoystickButton (operator, 3);
+  Button opYellowButton   = new JoystickButton (operator, 4);
+  Button opLeftBumper     = new JoystickButton (operator, 5);
+  Button opRightBumper    = new JoystickButton (operator, 6);
+  Button opLeftTrigger    = new JoystickButton (operator, 7);
+  Button opRightTrigger   = new JoystickButton (operator, 8);
 
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -55,7 +55,6 @@ public class OI {
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
-
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
@@ -73,31 +72,48 @@ public class OI {
     driver = new Joystick(0);
     operator = new Joystick(1);
 
-    opYellowButton = new JoystickButton(operator, 4);
-    opYellowButton.whenPressed(new PegPushCommand());
+    //Peg Push?
+    opYellowButton = new JoystickButton(operator, 4); //check the number later
+    opYellowButton.whenPressed(new DiscCommand(true));
 
-    opRedButton = new JoystickButton(operator, 3);
-    opRedButton.whenPressed(new PegPushCommand());
+    //Peg Pull?
+    opRedButton = new JoystickButton(operator, 3); //check the number later
+    opRedButton.whenPressed(new DiscCommand(false));
+
+    //Elevator Up
+    opGreenButton = new JoystickButton(operator, 2); //check the number later
+    opGreenButton.whenPressed(new PegPush(true));
+
+    //Elevator Down
+    opBlueButton = new JoystickButton(operator, 1); //check the number later
+    opBlueButton.whenPressed(new PegPush(false)); 
+
+    //Gear Shift Down
+    drRightTrigger = new JoystickButton (driver, 8); //check the number later
+    drRightTrigger.whenPressed(new GearShift(true));
+
+    //Gear Shift Up
+    drLeftTrigger = new JoystickButton (driver, 7); //check the number later 
+    drLeftTrigger.whenPressed(new GearShift(false));
+
+    //Cargo wheels spin in
+    opRightBumper = new JoystickButton (operator, 6); 
+    opRightBumper.whileHeld(new CargoWheels(-0.7));
+
+     //Cargo wheels spin out
+     opLeftBumper = new JoystickButton (operator, 5); 
+     opLeftBumper.whileHeld(new CargoWheels(0.7));
+
+    //New Disc Mech Up
+    drYellowButton = new JoystickButton(driver, 4);
+    drYellowButton.whileHeld(new DiscWrist(true));
+    
+    //New Disc Mech
+    drRedButton = new JoystickButton(driver, 3);
+    drRedButton.whileHeld(new DiscWrist(false));
 
     
-
-    drRightTrigger = new JoystickButton(driver, 8);
-    drRightTrigger.whileHeld(new DiscProto1Command());
-
-    drLeftTrigger = new JoystickButton(driver, 7);
-    drLeftTrigger.whileHeld(new DiscProto1Up());
-
-    drStartButton = new JoystickButton(driver, 9);
-    drStartButton.whenPressed(new Prototype1());
-
-    drLeftBumper = new JoystickButton(driver, 5);
-    drLeftBumper.whenPressed(new GearShift(false));
-
-    drRightBumper = new JoystickButton(driver, 6);
-    drRightBumper.whenPressed(new GearShift(true));
-
-    
-
+    //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }
 

@@ -33,6 +33,10 @@ public class OI {
 
   Button drRightTrigger   = new JoystickButton (driver, 8);
   Button drLeftTrigger    = new JoystickButton(driver, 7);
+  Button drYellowButton   = new JoystickButton(driver, 4); 
+  Button drBLueButton     = new JoystickButton(driver, 1);  
+  Button drGreenButton    = new JoystickButton(driver, 2);
+
   Button opBlueButton     = new JoystickButton (operator, 1); 
   Button opGreenButton    = new JoystickButton (operator, 2);
   Button opRedButton      = new JoystickButton (operator, 3);
@@ -99,7 +103,15 @@ public class OI {
      opLeftBumper = new JoystickButton (operator, 5); 
      opLeftBumper.whileHeld(new CargoWheels(0.7));
 
+    //New Disc Mech Up
+    //drYellowButton = new JoystickButton(driver, 4);
+    drYellowButton.whileHeld(new DiscWrist(true));
+    
+    //New Disc Mech
+    drGreenButton = new JoystickButton(driver, 2);
+    drGreenButton.whileHeld(new DiscWrist(false));
 
+    
     //SmartDashboard Button
     SmartDashboard.putData("LL_Aim", new LL_Aim());
   }

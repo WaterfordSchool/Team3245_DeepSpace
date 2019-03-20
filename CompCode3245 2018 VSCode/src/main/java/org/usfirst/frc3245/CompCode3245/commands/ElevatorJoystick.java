@@ -1,6 +1,8 @@
 
 package org.usfirst.frc3245.CompCode3245.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc3245.CompCode3245.Robot;
 import org.usfirst.frc3245.CompCode3245.RobotMap;
 
@@ -8,6 +10,7 @@ import org.usfirst.frc3245.CompCode3245.RobotMap;
  *
  */
 public class ElevatorJoystick extends Command {
+    private int limitState;
 	
     public ElevatorJoystick() {
 
@@ -20,10 +23,18 @@ public class ElevatorJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.activate(Robot.oi.getOperator());
+        limitState = Robot.elevator.elevatorLimitState();
+        SmartDashboard.putNumber("Elevator Limit State", limitState);
+        if (limitState > 100) {
+            Robot.elevator.activate(Robot.oi.getOperator());
+        }
+        else {
+            Robot.elevator.activate(0, 0);
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
+    
     protected boolean isFinished() {
          return isTimedOut();
     }

@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import oi.limelightvision.limelight.frc.LimeLight;
 
@@ -35,7 +36,6 @@ public class DriveTrain extends Subsystem {
   //public final SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightRear);
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
-
   public DriveTrain () {
     leftFront = new WPI_TalonSRX(RobotMap.leftFrontMotorID);
     leftRear = new WPI_TalonSRX(RobotMap.leftRearMotorID);
@@ -51,7 +51,9 @@ public class DriveTrain extends Subsystem {
     rightRear.follow(rightFront);
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
-  }
+
+
+  } 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
@@ -61,13 +63,32 @@ public class DriveTrain extends Subsystem {
   }
 
   public void drive(double left, double right) {
-      tDrive.tankDrive(-left, right );
+      tDrive.tankDrive(-left, right);
   }
+
 
   public void drive(Joystick joy, double kSpeed) {
       drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(3));
   }
 
+   //Instantiate Gear Shift Solenoid
+   
+
+/*
+   public void DownShift(){
+      gearPiston.set(DoubleSolenoid.Value.kForward);
+   }
+   
+   public void UpShift(){
+     gearPiston.set(DoubleSolenoid.Value.kReverse);
+   }
+   
+    public void ShiftOff (){
+      gearPiston.set(DoubleSolenoid.Value.kOff);
+    }
+   
+   
+*/
   public LimeLight gLimeLight(){
     return _limelight;
   }
