@@ -12,11 +12,14 @@ import frc.robot.commands.*;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 
 import oi.limelightvision.limelight.frc.LimeLight;
 
@@ -31,7 +34,6 @@ public class DriveTrain extends Subsystem {
   public final WPI_TalonSRX leftRear; //= new WPI_TalonSRX(RobotMap.leftRearMotor);
   public final WPI_TalonSRX rightFront; //= new WPI_TalonSRX(RobotMap.rightFrontMotor);
   public final WPI_TalonSRX rightRear; //= new WPI_TalonSRX(RobotMap.rightRearMotor);
-
   //public final SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFront, leftRear);
   //public final SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightRear);
 
@@ -49,9 +51,10 @@ public class DriveTrain extends Subsystem {
     
     leftRear.follow(leftFront);
     rightRear.follow(rightFront);
-
+    
     tDrive = new DifferentialDrive(leftFront, rightFront);
 
+    
 
   } 
   @Override
