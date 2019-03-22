@@ -6,13 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.Robot;
+
+import frc.robot.RobotMap;
+import frc.robot.commands.*;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-//import frc.robot.RobotMap;
-//import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
@@ -23,19 +26,20 @@ public class ExampleSubsystem extends Subsystem {
 
 private CANSparkMax testMotor;
 
-public void ExampleSubsystem () {
+public ExampleSubsystem () {
 
 testMotor = new CANSparkMax(5, MotorType.kBrushless);
 
 }
 
-public void motorOn(){
-testMotor.set(Robot.m_oi.driver.getY());
+public void motorOn(Joystick joy){
+testMotor.set(joy.getY());
 }
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ExampleCommand());
   }
 }
