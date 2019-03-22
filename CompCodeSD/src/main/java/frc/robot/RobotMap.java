@@ -28,8 +28,8 @@ public class RobotMap {
  //Elevator TalonSRX Motor Controllers IDs
 
  public static int ElevatorMotorID = 1;
- public static int SnakeWristMotorID = 2;
- public static int SnakeWheelsID = 3;
+ public static int SnakeWristMotorID = 3;
+ public static int SnakeWheelsID = 2;
  public static int DiscMech2ID = 9;
 
  //PCM Port Numbers for Pneumatics

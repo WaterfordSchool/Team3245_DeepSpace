@@ -8,8 +8,11 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+
+import java.security.Timestamp;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -24,6 +27,7 @@ public class HatchCover extends Subsystem {
   //DoubleSolenoid PegPush = new DoubleSolenoid(21,0,1); //The second PCM's number is 21
   //DoubleSolenoid DiscMech = new DoubleSolenoid(21,2,3); // The second PCM's number is 21
   WPI_TalonSRX DiscMech2 = new WPI_TalonSRX(RobotMap.DiscMech2ID);
+  
 /*
   public HatchCover(){
     PegPush.set(DoubleSolenoid.Value.kReverse);
@@ -57,6 +61,7 @@ public class HatchCover extends Subsystem {
   //New Disc Mech
 
   public void DiscDown(){
+    //fpgat = new bla bla AMES
     DiscMech2.set(0.8);
   }
 

@@ -58,10 +58,9 @@ public class Robot extends TimedRobot {
   public void robotInit() {
 
     UsbCamera m_Camera = CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
-    m_Camera.setResolution(320,240); //400, 225 or 480, 270
-    m_Camera.setFPS(120);
-    m_Camera.setExposureManual(1);
-
+    m_Camera.setResolution(320,240); //400, 225 or 480, 270 (these are not regulation resolutions)
+    m_Camera.setFPS(30);
+    m_Camera.setExposureAuto();
     /*
     new Thread(() -> {
       UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib

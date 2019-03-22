@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.networktables.NetworkTableInstance;
 
 import oi.limelightvision.limelight.frc.LimeLight;
 
