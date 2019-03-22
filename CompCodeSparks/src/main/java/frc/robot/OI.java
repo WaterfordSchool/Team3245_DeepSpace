@@ -22,6 +22,12 @@ public class OI {
     driver = new Joystick(0);
 
   }
+
+  public Joystick getDriver() {
+
+    return driver;
+
+  }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
