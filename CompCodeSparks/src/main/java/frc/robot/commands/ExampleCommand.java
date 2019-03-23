@@ -27,7 +27,7 @@ public class ExampleCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_subsystem.motorOn();  }
+    Robot.m_subsystem.motorOn(Robot.m_oi.getDriver());  }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
