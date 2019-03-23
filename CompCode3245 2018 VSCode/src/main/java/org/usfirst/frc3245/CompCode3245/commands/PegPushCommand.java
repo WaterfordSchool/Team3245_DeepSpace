@@ -29,10 +29,10 @@ public class PegPushCommand extends Command {
   @Override
   protected void execute() {
     if(peg_foward2 == true){
-      Robot.hatchCover.DiscScoreFoward();
+     // Robot.hatchCover.DiscScoreFoward();
     }
     else {
-      Robot.hatchCover.DiscScoreReverse();
+     // Robot.hatchCover.DiscScoreReverse();
     }
   }
 
@@ -45,7 +45,7 @@ public class PegPushCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.hatchCover.DiscScoreOff();
+    //Robot.hatchCover.DiscScoreOff();
   }
 
   // Called when another command which requires one or more of the same

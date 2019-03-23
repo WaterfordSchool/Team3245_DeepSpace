@@ -15,10 +15,10 @@ import edu.wpi.first.wpilibj.RobotBase;
 
 public class DiscMech extends Command {
   boolean discMech;
-  public DiscMech(boolean discMech2) {
+  public DiscMech(boolean discMech) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    discMech = discMech2;
+    this.discMech = discMech;
 
     requires(Robot.hatchCover);
   }
@@ -32,10 +32,10 @@ public class DiscMech extends Command {
   @Override
   protected void execute() {
     if(discMech == true){
-      Robot.hatchCover.DiscCartForward();
+      Robot.hatchCover.protoUp();
     }
     else{
-      Robot.hatchCover.DiscCartReverse();
+      Robot.hatchCover.protoDown();
     }
   }
 
@@ -48,7 +48,7 @@ public class DiscMech extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.hatchCover.DiscCartOff();
+    
   }
 
   // Called when another command which requires one or more of the same
