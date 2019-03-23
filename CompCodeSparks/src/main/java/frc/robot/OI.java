@@ -23,7 +23,7 @@ public class OI {
 
   }
 
-  public Joystick getDriver() {
+  public Joystick getDriverJoystick() {
 
     return driver;
 
