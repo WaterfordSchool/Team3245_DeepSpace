@@ -55,7 +55,14 @@ public class DriveTrain extends Subsystem {
     leftRear.setInverted(false);
     rightFront.setInverted(true);
     rightRear.setInverted(true);
-    
+
+    //Potential Ramping Code
+    double t = 1.0;
+    leftFront.setOpenLoopRampRate(t);
+    leftRear.setOpenLoopRampRate(t);
+    rightFront.setOpenLoopRampRate(t);
+    rightRear.setOpenLoopRampRate(t);
+
     leftRear.follow(leftFront);
     rightRear.follow(rightFront);
 

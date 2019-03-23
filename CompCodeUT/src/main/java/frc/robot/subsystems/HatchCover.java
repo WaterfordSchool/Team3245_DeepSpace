@@ -62,11 +62,11 @@ public class HatchCover extends Subsystem {
 
   public void DiscDown(){
     //fpgat = new bla bla AMES
-    DiscMech2.set(0.8);
+    DiscMech2.set(0.1);
   }
 
   public void DiscUp(){
-    DiscMech2.set(-0.8);
+    DiscMech2.set(-0.1);
   }
 
   public void DiscStop(){
