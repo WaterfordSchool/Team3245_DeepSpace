@@ -18,12 +18,12 @@ public class DiscPrototype1 extends Subsystem {
   
   public void protoDown() {
 
-    prototypeMotorGang1.set(0.7);
+    prototypeMotorGang1.set(0.1);
 
   }
   
   public void protoUp(){
-    prototypeMotorGang1.set(-0.7);
+    prototypeMotorGang1.set(-0.1);
   }
   
   public void protoStaph(){
