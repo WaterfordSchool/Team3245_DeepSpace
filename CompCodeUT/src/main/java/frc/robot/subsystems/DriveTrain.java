@@ -19,6 +19,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import oi.limelightvision.limelight.frc.LimeLight;
 
 /**
@@ -28,20 +31,25 @@ public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   private LimeLight _limelight;
-  public final WPI_TalonSRX leftFront; //= new WPI_TalonSRX(RobotMap.leftFrontMotor);
-  public final WPI_TalonSRX leftRear; //= new WPI_TalonSRX(RobotMap.leftRearMotor);
-  public final WPI_TalonSRX rightFront; //= new WPI_TalonSRX(RobotMap.rightFrontMotor);
-  public final WPI_TalonSRX rightRear; //= new WPI_TalonSRX(RobotMap.rightRearMotor);
+  private CANSparkMax leftFront; //public final WPI_TalonSRX leftFront; //= new WPI_TalonSRX(RobotMap.leftFrontMotor);
+  private CANSparkMax leftMiddle;
+  private CANSparkMax leftRear;  //public final WPI_TalonSRX leftRear; //= new WPI_TalonSRX(RobotMap.leftRearMotor);
+  private CANSparkMax rightFront; // public final WPI_TalonSRX rightFront; //= new WPI_TalonSRX(RobotMap.rightFrontMotor);
+  private CANSparkMax rightMiddle;
+  private CANSparkMax rightRear; // public final WPI_TalonSRX rightRear; //= new WPI_TalonSRX(RobotMap.rightRearMotor);
+  
 
   //public final SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFront, leftRear);
   //public final SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightRear);
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
   public DriveTrain () {
-    leftFront = new WPI_TalonSRX(RobotMap.leftFrontMotorID);
-    leftRear = new WPI_TalonSRX(RobotMap.leftRearMotorID);
-    rightFront = new WPI_TalonSRX(RobotMap.rightFrontMotorID);
-    rightRear = new WPI_TalonSRX(RobotMap.rightRearMotorID);
+    leftFront = new CANSparkMax(1, MotorType.kBrushless);
+    leftMiddle = new CANSparkMax(3, MotorType.kBrushless);
+    leftRear = new CANSparkMax(5, MotorType.kBrushless);
+    rightFront = new CANSparkMax(0, MotorType.kBrushless);
+    rightMiddle = new CANSparkMax(2, MotorType.kBrushless);
+    rightRear = new CANSparkMax(4, MotorType.kBrushless);
 
     leftFront.setInverted(false);
     leftRear.setInverted(false);
