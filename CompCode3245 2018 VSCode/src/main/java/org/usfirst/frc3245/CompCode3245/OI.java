@@ -43,10 +43,10 @@ public class OI {
    
         //Driver Controls
         	//Cube Scoring Command
-        	drLeftTrigger = new JoystickButton (driver, 6);
+        	drLeftTrigger = new JoystickButton (driver, 5);
 			drLeftTrigger.whenPressed(new CubeScoringCommand ());
 			
-			drRightBumper = new JoystickButton(driver, 5);
+			drRightBumper = new JoystickButton(driver, 6);
  			drRightBumper.whileHeld(new LL_Aim());
         
 		//Operator Controls
