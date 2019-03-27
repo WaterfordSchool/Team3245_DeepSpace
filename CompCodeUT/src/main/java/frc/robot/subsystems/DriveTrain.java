@@ -44,12 +44,12 @@ public class DriveTrain extends Subsystem {
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
   public DriveTrain () {
-    leftFront = new CANSparkMax(1, MotorType.kBrushless);
-    leftMiddle = new CANSparkMax(3, MotorType.kBrushless);
-    leftRear = new CANSparkMax(5, MotorType.kBrushless);
-    rightFront = new CANSparkMax(0, MotorType.kBrushless);
+    leftFront   = new CANSparkMax(1, MotorType.kBrushless);
+    leftMiddle  = new CANSparkMax(3, MotorType.kBrushless);
+    leftRear    = new CANSparkMax(5, MotorType.kBrushless);
+    rightFront  = new CANSparkMax(0, MotorType.kBrushless);
     rightMiddle = new CANSparkMax(2, MotorType.kBrushless);
-    rightRear = new CANSparkMax(4, MotorType.kBrushless);
+    rightRear   = new CANSparkMax(4, MotorType.kBrushless);
 
     leftFront.setInverted(false);
     leftRear.setInverted(false);
