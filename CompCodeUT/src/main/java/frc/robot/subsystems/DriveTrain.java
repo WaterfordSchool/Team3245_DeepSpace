@@ -44,36 +44,34 @@ public class DriveTrain extends Subsystem {
 
   public final DifferentialDrive tDrive; // = new DifferentialDrive(leftMotors, rightMotors);
   public DriveTrain () {
-    leftFront = new CANSparkMax(1, MotorType.kBrushless);
-    leftMiddle = new CANSparkMax(3, MotorType.kBrushless);
-    leftRear = new CANSparkMax(5, MotorType.kBrushless);
-    rightFront = new CANSparkMax(0, MotorType.kBrushless);
-    rightMiddle = new CANSparkMax(2, MotorType.kBrushless);
-    rightRear = new CANSparkMax(4, MotorType.kBrushless);
+    leftFront   = new CANSparkMax(21, MotorType.kBrushless);
+    leftMiddle  = new CANSparkMax(25, MotorType.kBrushless);
+    leftRear    = new CANSparkMax(23, MotorType.kBrushless);
+    rightFront  = new CANSparkMax(20, MotorType.kBrushless);
+    rightMiddle = new CANSparkMax(22, MotorType.kBrushless);
+    rightRear   = new CANSparkMax(24, MotorType.kBrushless);
 
-    //left side
-    leftFront.setInverted(false);
-    leftMiddle.setInverted(false);
-    leftRear.setInverted(false);
-    //right side
-    rightFront.setInverted(true);
-    rightMiddle.setInverted(true);
-    rightRear.setInverted(true);
+   leftFront.setInverted(false);
+   leftMiddle.setInverted(false);
+   leftRear.setInverted(false);
+   
+   rightFront.setInverted(true);
+   rightMiddle.setInverted(true);
+   rightRear.setInverted(true);
 
     //Potential Ramping Code
-    /* t = 5.0;
+    final double t = 0.0;
     leftFront.setOpenLoopRampRate(t);
     leftMiddle.setOpenLoopRampRate(t);
     leftRear.setOpenLoopRampRate(t);
     rightFront.setOpenLoopRampRate(t);
     rightMiddle.setOpenLoopRampRate(t);
     rightRear.setOpenLoopRampRate(t);
-*/
 
-    //left side
+
     leftRear.follow(leftFront);
     leftMiddle.follow(leftFront);
-    //right side
+
     rightRear.follow(rightFront);
     rightMiddle.follow(rightFront);
 
@@ -90,7 +88,7 @@ public class DriveTrain extends Subsystem {
   }
 
   public void drive(double left, double right) {
-      tDrive.tankDrive(-left, right);
+      tDrive.tankDrive(-right, left);
   }
 
 
