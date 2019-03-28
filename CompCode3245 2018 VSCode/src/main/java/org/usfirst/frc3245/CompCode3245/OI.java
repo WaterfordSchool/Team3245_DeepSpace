@@ -48,12 +48,13 @@ public class OI {
 			
 			drRightBumper = new JoystickButton(driver, 6);
  			drRightBumper.whileHeld(new LL_Aim());
-        
+		
+			drYellowButton = new JoystickButton (driver, 4);
+			drYellowButton.whenPressed(new Climber(true));
+
+
 		//Operator Controls
 		
-			//PegPush
-			drYellowButton = new JoystickButton (driver, 4);
-			drYellowButton.whenPressed(new PegPushCommand(true));
 
         	//Intake
         	//opLeftJoy wrist up and down
@@ -92,7 +93,10 @@ public class OI {
 			//test
         	//FastButton
         	drLeftBumper = new JoystickButton (driver, 5);
-        	drLeftBumper.whileHeld(new TankDrive(1.0));
+			drLeftBumper.whileHeld(new TankDrive(1.0));
+			
+		
+
 
         // SmartDashboard Buttons
         //SmartDashboard.putData("Autonomous Command", new AutonomousCommand()); Do we need this?

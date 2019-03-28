@@ -51,11 +51,13 @@ public class DriveTrain extends Subsystem {
     rightMiddle = new CANSparkMax(2, MotorType.kBrushless);
     rightRear = new CANSparkMax(4, MotorType.kBrushless);
 
+    //left side
     leftFront.setInverted(false);
     leftMiddle.setInverted(false);
     leftRear.setInverted(false);
+    //right side
     rightFront.setInverted(true);
-    rightMiddle.setInverted(false);
+    rightMiddle.setInverted(true);
     rightRear.setInverted(true);
 
     //Potential Ramping Code
@@ -67,8 +69,13 @@ public class DriveTrain extends Subsystem {
     rightMiddle.setOpenLoopRampRate(t);
     rightRear.setOpenLoopRampRate(t);
 */
+
+    //left side
     leftRear.follow(leftFront);
+    leftMiddle.follow(leftFront);
+    //right side
     rightRear.follow(rightFront);
+    rightMiddle.follow(rightFront);
 
     tDrive = new DifferentialDrive(leftFront, rightFront);
 

@@ -98,8 +98,8 @@ public class OI {
     drLeftTrigger.whenPressed(new GearShift(false));
 
     //Cargo wheels spin in
-    opRightBumper = new JoystickButton (operator, 6); 
-    opRightBumper.whileHeld(new CargoWheels(-0.85));
+     opRightBumper = new JoystickButton (operator, 6); 
+     opRightBumper.whileHeld(new CargoWheels(-0.85));
 
      //Cargo wheels spin out
      opLeftBumper = new JoystickButton (operator, 5); 

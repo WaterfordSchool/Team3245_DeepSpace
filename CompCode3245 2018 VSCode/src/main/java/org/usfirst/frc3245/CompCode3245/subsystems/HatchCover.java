@@ -21,12 +21,12 @@ public class HatchCover extends Subsystem {
   
   public void protoDown() {
 
-    prototypeMotorGang1.set(0.3);
+    prototypeMotorGang1.set(0.65);
 
   }
   
   public void protoUp(){
-    prototypeMotorGang1.set(-0.3);
+    prototypeMotorGang1.set(-0.65);
   }
   
   public void protoStaph(){
