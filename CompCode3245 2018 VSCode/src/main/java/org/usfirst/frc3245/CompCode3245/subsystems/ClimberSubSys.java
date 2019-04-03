@@ -19,7 +19,9 @@ public class ClimberSubSys extends Subsystem {
   
   Solenoid climber1 = new Solenoid(0);
   Solenoid climber2 = new Solenoid(6);
-
+  public ClimberSubSys(){
+    
+  }
 
 // please fix asap
   public void upsiedaisy(){

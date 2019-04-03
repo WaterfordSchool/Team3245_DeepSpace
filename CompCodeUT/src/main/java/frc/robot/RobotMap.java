@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------------------*/
+ /*----------------------------------------------------------------------------*/
 /* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
@@ -20,17 +20,17 @@ public class RobotMap {
   // public static int rightMotor = 2;
 
  //Drivetrain TalonSRX Motor Controllers IDs
- public static int leftFrontMotorID = 5;
- public static int leftRearMotorID = 7;
- public static int rightFrontMotorID = 6;
- public static int rightRearMotorID = 8;
+ //public static int leftFrontMotorID = 5;
+ //public static int leftRearMotorID = 7;
+ //public static int rightFrontMotorID = 6;
+ //public static int rightRearMotorID = 8;
 
  //Elevator TalonSRX Motor Controllers IDs
 
- public static int ElevatorMotorID = 1;
- public static int SnakeWristMotorID = 3;
+ public static int ElevatorMotorID = 9;
+ public static int SnakeWristMotorID = 1;
  public static int SnakeWheelsID = 2;
- public static int DiscMech2ID = 9;
+ public static int DiscMech2ID = 3;
 
  //PCM Port Numbers for Pneumatics
  public static int DiscPushPort = 3;
