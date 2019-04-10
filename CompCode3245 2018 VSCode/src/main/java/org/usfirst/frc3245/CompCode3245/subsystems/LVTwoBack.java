@@ -8,7 +8,7 @@
 package org.usfirst.frc3245.CompCode3245.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+//import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 
 /**
@@ -18,7 +18,8 @@ public class LVTwoBack extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public final Solenoid L2Piston = new Solenoid(1);
+  public final Solenoid L2Piston = new Solenoid(4
+  );
 
   public void Down(){
     L2Piston.set(true);

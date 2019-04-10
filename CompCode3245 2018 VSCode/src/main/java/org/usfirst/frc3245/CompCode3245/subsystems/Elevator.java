@@ -58,10 +58,10 @@ public class Elevator extends Subsystem {
         ElevatorMotor.set(joy.getY());
     }
     public void up() {
-    	ElevatorMotor.set(.7);
+    	ElevatorMotor.set(.1);
     }
     public void down() {
-    	ElevatorMotor.set(-.7);
+    	ElevatorMotor.set(-.1);
     }
     public int elevatorLimitState() {
         return elevatorLimit.getAverageValue();

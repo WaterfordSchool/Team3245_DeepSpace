@@ -33,11 +33,11 @@ public class Climber extends Command {
   protected void execute() {
     if(toClimb == true){
       
-     Robot.m_climb.upsiedaisy();
+     Robot.m_climb.Down();
      
     }
     else {
-     Robot.m_climb.downsiedaisy();
+     Robot.m_climb.Up();
 
     }
   }

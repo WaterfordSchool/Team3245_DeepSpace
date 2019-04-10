@@ -78,43 +78,43 @@ public class TankDrive extends Command {
   }
 
   
-      public void Update_Limelight_Tracking() {
-      final double STEER_K = 0.03;
-      final double DRIVE_K = 0.26;
-      final double DESIRED_TARGET_AREA = 13.0;
-      final double MAX_DRIVE = 0.3;
+  public void Update_Limelight_Tracking() {
+    final double STEER_K = 0.03;
+    final double DRIVE_K = 0.26;
+    final double DESIRED_TARGET_AREA = 13.0;
+    final double MAX_DRIVE = 0.3;
     
-      double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
-      double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
-      double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
-      double ta = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0);
+    double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
+    double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+    double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
+    double ta = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0);
 
-      SmartDashboard.putNumber("tx", tx);
+    SmartDashboard.putNumber("tx", tx);
 
-      if (tv < 1.0){
-        m_LimelightHasValidTarget = false;
-        m_LimelightDriveCommand = 0.0;
-        m_LimelightSteerCommand = 0.0;
-        return;
-
+    if (tv < 1.0){
+      m_LimelightHasValidTarget = false;
+      m_LimelightDriveCommand = 0.0;
+      m_LimelightSteerCommand = 0.0;
+      return;
       }
 
-      m_LimelightHasValidTarget = true;
+    m_LimelightHasValidTarget = true;
 
-      //proportional steering
-      double steer_cmd = tx * STEER_K;
-      m_LimelightSteerCommand = steer_cmd;
-      SmartDashboard.putNumber("steer command", m_LimelightSteerCommand);
+    //proportional steering
+    double steer_cmd = tx * STEER_K;
+    m_LimelightSteerCommand = steer_cmd;
+    SmartDashboard.putNumber("steer command", m_LimelightSteerCommand);
 
-      //drive forward until target area reaches the desired area
-      double drive_cmd = (DESIRED_TARGET_AREA - ta) * DRIVE_K;
+    //drive forward until target area reaches the desired area
+    double drive_cmd = (DESIRED_TARGET_AREA - ta) * DRIVE_K;
 
-      //doesn't let the robot drive too fast
-      if (drive_cmd > MAX_DRIVE){
-        drive_cmd = MAX_DRIVE;
+    //doesn't let the robot drive too fast
+    if (drive_cmd > MAX_DRIVE){
+      drive_cmd = MAX_DRIVE;
       }
-      m_LimelightDriveCommand = drive_cmd;
-      }
+    m_LimelightDriveCommand = drive_cmd;
+    SmartDashboard.putNumber("drive command", m_LimelightDriveCommand);
+  }
 
 
 }

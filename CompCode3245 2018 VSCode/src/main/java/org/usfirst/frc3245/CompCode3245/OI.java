@@ -49,8 +49,8 @@ public class OI {
 			drRightBumper = new JoystickButton(driver, 6);
  			drRightBumper.whileHeld(new LL_Aim());
 		
-			drYellowButton = new JoystickButton (driver, 4);
-			drYellowButton.whenPressed(new Climber(true));
+			//drYellowButton = new JoystickButton (driver, 4);
+			//drYellowButton.whenPressed(new Climber(true));
 
 
 		//Operator Controls
@@ -79,16 +79,20 @@ public class OI {
         	//Cart
         	// opGreenButton cart wheels in
         	opGreenButton = new JoystickButton (operator, 2);
-        	opGreenButton.whileHeld(new DiscMech(false));
+			opGreenButton.whileHeld(new DiscMech(true));
+			
         	// opYellowButton cart wheels out
         	opYellowButton = new JoystickButton (operator, 4);
-        	opYellowButton.whileHeld(new DiscMech(true));
+			opYellowButton.whileHeld(new DiscMech(false));
+			
         	// opBlueButton rotate arms in
         	opBlueButton = new JoystickButton (operator, 1);
-        	opBlueButton.whileHeld(new DiscMech(false));
+			opBlueButton.whileHeld(new Climber(true));
+			
+			
         	// opRedButton rotate arms out
         	opRedButton =  new JoystickButton (operator, 3);
-        	opRedButton.whileHeld(new DiscMech(true));
+        	opRedButton.whileHeld(new Climber(false));
 			
 			//test
         	//FastButton

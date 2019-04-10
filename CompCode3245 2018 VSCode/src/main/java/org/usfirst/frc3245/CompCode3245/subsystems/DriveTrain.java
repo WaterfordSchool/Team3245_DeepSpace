@@ -77,6 +77,12 @@ public class DriveTrain extends Subsystem {
     	SmartDashboard.putNumber("Right Motor Speed", rightFrontMotor.get());
     	SmartDashboard.putNumber("Left Motor Speed", leftFrontMotor.get());
     }
+
+    public void LL_arcadeDrive(double kSpeed, double heading) {
+
+        tDrive.arcadeDrive(kSpeed, heading);
+      
+    }
     
     public void resetEncoders() {
     	leftFrontMotor.setSelectedSensorPosition(0, 0, 0);
