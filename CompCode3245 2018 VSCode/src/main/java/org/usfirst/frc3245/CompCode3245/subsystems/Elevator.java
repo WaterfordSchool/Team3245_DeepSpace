@@ -58,7 +58,7 @@ public class Elevator extends Subsystem {
         ElevatorMotor.set(joy.getY());
     }
     public void up() {
-    	ElevatorMotor.set(.1);
+        ElevatorMotor.set(.1);
     }
     public void down() {
     	ElevatorMotor.set(-.1);

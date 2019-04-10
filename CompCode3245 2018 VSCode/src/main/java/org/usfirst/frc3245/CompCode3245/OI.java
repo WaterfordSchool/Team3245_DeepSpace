@@ -79,11 +79,11 @@ public class OI {
         	//Cart
         	// opGreenButton cart wheels in
         	opGreenButton = new JoystickButton (operator, 2);
-			opGreenButton.whileHeld(new DiscMech(true));
+			opGreenButton.whileHeld(new DiscMech(false));
 			
         	// opYellowButton cart wheels out
         	opYellowButton = new JoystickButton (operator, 4);
-			opYellowButton.whileHeld(new DiscMech(false));
+			opYellowButton.whileHeld(new DiscMech(true));
 			
         	// opBlueButton rotate arms in
         	opBlueButton = new JoystickButton (operator, 1);
