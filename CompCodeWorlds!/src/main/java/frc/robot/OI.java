@@ -105,6 +105,13 @@ public class OI {
      opLeftBumper = new JoystickButton (operator, 5); 
      opLeftBumper.whileHeld(new CargoWheels(0.85));
 
+     //Climber Piston
+     opBlueButton = new JoystickButton(operator, 1);
+     opBlueButton.whenPressed(new PistonClimb(true));
+
+     //Climber Piston
+     opRedButton = new JoystickButton(operator, 3);
+     opRedButton.whenPressed(new PistonClimb(false));
 
     //New Disc Mech Up
     drYellowButton = new JoystickButton(driver, 4);

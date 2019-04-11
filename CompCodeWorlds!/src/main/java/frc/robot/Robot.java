@@ -45,6 +45,7 @@ public class Robot extends TimedRobot {
   public static Elevator m_Elevator = new Elevator();
   public static Cargo m_cargo = new Cargo();
   public static Shifter m_Shifter = new Shifter();
+  public static LTwoBack m_climb = new LTwoBack();
 
 
   Command m_autonomousCommand;
