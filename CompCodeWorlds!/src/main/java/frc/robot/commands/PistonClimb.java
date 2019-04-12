@@ -15,11 +15,8 @@ public class PistonClimb extends Command {
   boolean toClimb;
 
   public PistonClimb(boolean toClimb) {
-    
     this.toClimb = toClimb;
-
     requires(Robot.m_climb);
-
   }
 
   // Called just before this Command runs the first time
@@ -32,14 +29,11 @@ public class PistonClimb extends Command {
   protected void execute() {
 
     if(toClimb == true) {
-
-    Robot.m_climb.Down();
-
+      Robot.m_climb.Down();
     } else {
-
       Robot.m_climb.Up();
-
     }
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
