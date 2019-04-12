@@ -35,12 +35,10 @@ public class PistonClimb extends Command {
 
     Robot.m_climb.Down();
 
-    } else if (toClimb == false) {
+    } else {
 
       Robot.m_climb.Up();
 
-    } else {
-      Robot.m_climb.close();
     }
   }
 
@@ -53,11 +51,13 @@ public class PistonClimb extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_climb.Off();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
