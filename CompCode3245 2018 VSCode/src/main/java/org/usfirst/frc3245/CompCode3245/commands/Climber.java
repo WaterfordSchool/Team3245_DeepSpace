@@ -32,13 +32,10 @@ public class Climber extends Command {
   @Override
   protected void execute() {
     if(toClimb == true){
-      
      Robot.m_climb.Down();
-     
     }
     else {
      Robot.m_climb.Up();
-
     }
   }
 
@@ -51,7 +48,7 @@ public class Climber extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    //Robot.hatchCover.DiscScoreOff();
+    Robot.m_climb.Off();
   }
 
   // Called when another command which requires one or more of the same
