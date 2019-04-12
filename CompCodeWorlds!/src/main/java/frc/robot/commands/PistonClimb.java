@@ -35,8 +35,12 @@ public class PistonClimb extends Command {
 
     Robot.m_climb.Down();
 
+    } else if (toClimb == false) {
+
+      Robot.m_climb.Up();
+
     } else {
-      Robot.m_climb.Off();
+      Robot.m_climb.close();
     }
   }
 
