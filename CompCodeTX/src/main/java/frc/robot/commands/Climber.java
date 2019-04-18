@@ -10,12 +10,15 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class PistonClimb extends Command {
+public class Climber extends Command {
 
   boolean toClimb;
+  public Climber(boolean toClimb) {
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
 
-  public PistonClimb(boolean toClimb) {
     this.toClimb = toClimb;
+
     requires(Robot.m_climb);
   }
 
@@ -27,13 +30,11 @@ public class PistonClimb extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
     if(toClimb == true) {
       Robot.m_climb.Down();
     } else {
       Robot.m_climb.Up();
     }
-    
   }
 
   // Make this return true when this Command no longer needs to run execute()

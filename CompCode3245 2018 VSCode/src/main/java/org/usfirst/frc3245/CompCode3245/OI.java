@@ -86,12 +86,12 @@ public class OI {
 			opYellowButton.whileHeld(new DiscMech(true));
 			
         	// opBlueButton rotate arms in
-        	opBlueButton = new JoystickButton (operator, 1);
+        	opBlueButton = new JoystickButton (operator, 3);
 			opBlueButton.whileHeld(new Climber(true));
 			
 			
         	// opRedButton rotate arms out
-        	opRedButton =  new JoystickButton (operator, 3);
+        	opRedButton =  new JoystickButton (operator, 1);
         	opRedButton.whileHeld(new Climber(false));
 			
 			//test

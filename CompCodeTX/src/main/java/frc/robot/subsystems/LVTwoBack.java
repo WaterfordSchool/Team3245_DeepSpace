@@ -8,27 +8,27 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 /**
  * Add your docs here.
  */
-public class LTwoBack extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+public class LVTwoBack extends Subsystem {
 
-  public final Solenoid L2Piston = new Solenoid(8);
+  private final DoubleSolenoid L2Piston = new DoubleSolenoid(20, 5, 6);
 
-  public void Down() {
-    L2Piston.set(true);
-  }
+public void Down() {
+  L2Piston.set(DoubleSolenoid.Value.kForward);
+}
 
-  public void Up() {
-    L2Piston.set(true);
-  }
-  public void Off() {
-    L2Piston.close();
-  }
+public void Up() {
+  L2Piston.set(DoubleSolenoid.Value.kReverse);
+}
+
+public void Off() {
+  L2Piston.set(DoubleSolenoid.Value.kOff);
+}
 
   @Override
   public void initDefaultCommand() {

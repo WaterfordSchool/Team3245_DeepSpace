@@ -17,9 +17,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 
-public class Elevator extends Subsystem {
+ public class Elevator extends Subsystem {
 
-    public final WPI_TalonSRX elevatorMotor = new WPI_TalonSRX(RobotMap.ElevatorMotorID);
+  public final WPI_TalonSRX elevatorMotor = new WPI_TalonSRX(RobotMap.ElevatorMotorID);
     
 
 
@@ -51,7 +51,7 @@ public class Elevator extends Subsystem {
 
     
     public void activate(Joystick joy) {
-    	//activate(joy.getAxis(AxisType.kThrottle), 0);
+        //activate(joy.getAxis(AxisType.kThrottle), 0);
     	elevatorMotor.set(joy.getY());
     }
     public void up() {
@@ -62,5 +62,5 @@ public class Elevator extends Subsystem {
     }
     public void stop() {
     	elevatorMotor.set(0);
-    }
+    } 
 }

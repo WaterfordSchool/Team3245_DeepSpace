@@ -110,13 +110,14 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-    	
+    	Robot.m_climb.Down();
     
     }
 
     @Override
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
+        
               
     }
 

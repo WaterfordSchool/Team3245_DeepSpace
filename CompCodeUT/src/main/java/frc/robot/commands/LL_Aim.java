@@ -14,9 +14,9 @@ import frc.robot.Robot;
 public class LL_Aim extends Command {
  
 
-  private boolean m_LimelightHasValidTarget = false; 
-  private double m_LimelightDriveCommand = 0.0;
-  private double m_LimelightSteerCommand = 0.0;
+//  private boolean m_LimelightHasValidTarget = false; 
+  //private double m_LimelightDriveCommand = 0.0;
+ // private double m_LimelightSteerCommand = 0.0;
 
 
   public LL_Aim() {
@@ -34,16 +34,16 @@ public class LL_Aim extends Command {
   @Override
   protected void execute() {
 
-   Update_Limelight_Tracking();
+ //  Update_Limelight_Tracking();
 
-   if (m_LimelightHasValidTarget) {
-     Robot.m_driveTrain.drive(m_LimelightDriveCommand, m_LimelightSteerCommand);
+  // if (m_LimelightHasValidTarget) {
+    // Robot.m_driveTrain.drive(m_LimelightDriveCommand, m_LimelightSteerCommand);
    }
-   else {
-     Robot.m_driveTrain.drive(0.0,0.0);
-   }
+   //else {
+     //Robot.m_driveTrain.drive(0.0,0.0);
+   //}
   
-  }
+ // }
 
   
 
@@ -66,37 +66,37 @@ public class LL_Aim extends Command {
   }
 
   public void Update_Limelight_Tracking() {
-    final double STEER_K = 0.03;
-    final double DRIVE_K = 0.26;
-    final double DESIRED_TARGET_AREA = 13.0;
-    final double MAX_DRIVE = 0.7;
+ //   final double STEER_K = 0.03;
+  //  final double DRIVE_K = 0.26;
+  //  final double DESIRED_TARGET_AREA = 13.0;
+  //  final double MAX_DRIVE = 0.7;
   
-    double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
-    double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
-    double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
-    double ta = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0);
+    //double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
+    //double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+    //double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
+   // double ta = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0);
 
-    if (tv < 1.0){
-      m_LimelightHasValidTarget = false;
-      m_LimelightDriveCommand = 0.0;
-      m_LimelightSteerCommand = 0.0;
-      return;
+   // if (tv < 1.0){
+    //  m_LimelightHasValidTarget = false;
+     // m_LimelightDriveCommand = 0.0;
+     // m_LimelightSteerCommand = 0.0;
+     // return;
 
-    }
+    //}
 
-    m_LimelightHasValidTarget = true;
+   // m_LimelightHasValidTarget = true;
 
     //proportional steering
-    double steer_cmd = tx * STEER_K;
-    m_LimelightSteerCommand = steer_cmd;
+   // double steer_cmd = tx * STEER_K;
+   // m_LimelightSteerCommand = steer_cmd;
 
     //drive forward until target area reaches the desired area
-    double drive_cmd = (DESIRED_TARGET_AREA - ta) * DRIVE_K;
+   // double drive_cmd = (DESIRED_TARGET_AREA - ta) * DRIVE_K;
 
     //don't let the robot drive too fast
-    if (drive_cmd > MAX_DRIVE){
-      drive_cmd = MAX_DRIVE;
+    //if (drive_cmd > MAX_DRIVE){
+    //  drive_cmd = MAX_DRIVE;
     }
-    m_LimelightDriveCommand = drive_cmd;
-    }
+   // m_LimelightDriveCommand = drive_cmd;
+    //}
 }

@@ -60,7 +60,7 @@ public class DriveTrain extends Subsystem {
    rightRear.setInverted(true);
 
     //Potential Ramping Code
-    final double t = 0.0;
+    final double t = 0.2;
     leftFront.setOpenLoopRampRate(t);
     leftMiddle.setOpenLoopRampRate(t);
     leftRear.setOpenLoopRampRate(t);
@@ -96,8 +96,12 @@ public class DriveTrain extends Subsystem {
       drive(kSpeed*joy.getY(), kSpeed*joy.getRawAxis(3));
   }
 
-   //Instantiate Gear Shift Solenoid
-   
+   //Arcade Drive Method for LimeLight
+   public void LL_arcadeDrive(double kSpeed, double heading) {
+
+      tDrive.arcadeDrive(kSpeed, heading);
+    
+  }   
 
 /*
    public void DownShift(){

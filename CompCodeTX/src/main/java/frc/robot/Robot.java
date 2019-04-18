@@ -45,7 +45,8 @@ public class Robot extends TimedRobot {
   public static Elevator m_Elevator = new Elevator();
   public static Cargo m_cargo = new Cargo();
   public static Shifter m_Shifter = new Shifter();
-  public static LTwoBack m_climb = new LTwoBack();
+  public static LVTwoBack m_climb = new LVTwoBack();
+ // public static ClimberSubSys m_climb = new ClimberSubSys();
 
 
   Command m_autonomousCommand;
@@ -58,10 +59,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
 
-    UsbCamera m_Camera = CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
-    m_Camera.setResolution(320,240); //400, 225 or 480, 270 (these are not regulation resolutions)
-    m_Camera.setFPS(30);
-    m_Camera.setExposureAuto();
+    //UsbCamera m_Camera = CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib
+    //m_Camera.setResolution(320,240); //400, 225 or 480, 270 (these are not regulation resolutions)
+    //m_Camera.setFPS(30);
+    //m_Camera.setExposureAuto();
     /*
     new Thread(() -> {
       UsbCamera m_Camera =  CameraServer.getInstance().startAutomaticCapture(); // Simple Genius Camera Code wpilib

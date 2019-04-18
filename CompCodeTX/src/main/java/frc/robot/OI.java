@@ -33,9 +33,10 @@ public class OI {
 
   Button drRightTrigger   = new JoystickButton (driver, 8);
   Button drLeftTrigger    = new JoystickButton(driver, 7);
+  Button drLeftBumper     = new JoystickButton(driver, 5);
   Button drRightBumper    = new JoystickButton(driver, 6);
   Button drYellowButton   = new JoystickButton(driver, 4); 
-  Button drBLueButton     = new JoystickButton(driver, 1);  
+  Button drBlueButton     = new JoystickButton(driver, 1);  
   Button drGreenButton    = new JoystickButton(driver, 2);
   Button drRedButton      = new JoystickButton(driver, 3);
 
@@ -105,13 +106,6 @@ public class OI {
      opLeftBumper = new JoystickButton (operator, 5); 
      opLeftBumper.whileHeld(new CargoWheels(0.85));
 
-     //Climber Piston
-     opBlueButton = new JoystickButton(operator, 1);
-     opBlueButton.whenPressed(new PistonClimb(true));
-
-     //Climber Piston
-     opRedButton = new JoystickButton(operator, 3);
-     opRedButton.whenPressed(new PistonClimb(false));
 
     //New Disc Mech Up
     drYellowButton = new JoystickButton(driver, 4);
@@ -123,9 +117,16 @@ public class OI {
     drRedButton.whileHeld(new DiscWrist(false));
     //drRedButton.whenPressed(new DiscWrist(false));
 
+   // drBlueButton.whenPressed(new Climber(true));
+   // drGreenButton.whenPressed(new Climber(false));
+
     //limelight 
- //   drRightBumper = new JoystickButton(driver, 6);
- //   drRightBumper.whileHeld(new LL_Aim());
+    //drRightBumper = new JoystickButton(driver, 6);
+    //drRightBumper.whileHeld(new LL_Aim());
+
+    //Slow Button
+    drLeftBumper = new JoystickButton (driver, 5);
+		drLeftBumper.whileHeld(new TankDrive(0.7));
 
     
     //SmartDashboard Button
