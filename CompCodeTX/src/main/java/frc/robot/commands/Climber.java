@@ -30,7 +30,7 @@ public class Climber extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(toClimb == true) {
+    if(toClimb) {
       Robot.m_climb.Down();
     } else {
       Robot.m_climb.Up();

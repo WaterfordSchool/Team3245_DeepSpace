@@ -8,6 +8,9 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.buttons.*;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -107,15 +110,20 @@ public class OI {
      opLeftBumper.whileHeld(new CargoWheels(0.85));
 
 
-    //New Disc Mech Up
-    drYellowButton = new JoystickButton(driver, 4);
-    drYellowButton.whileHeld(new DiscWrist(true));
+    //Climber Piston
+    opRedButton = new JoystickButton(operator, 3);
+    opRedButton.whileHeld(new Climber(true));
+    opRedButton.whenReleased(new Climber(false));
+    //Climber Wrist
+    //WPI_TalonSRX climb = new WPI_TalonSRX(3);
+    //climb.set(getOperator().getY());
     //drYellowButton.whenPressed(new DiscWrist(true));
     
     //New Disc Mech
-    drRedButton = new JoystickButton(driver, 3);
-    drRedButton.whileHeld(new DiscWrist(false));
-    //drRedButton.whenPressed(new DiscWrist(false));
+  /*  opRedButton = new JoystickButton(operator, 3);
+    opRedButton.whileHeld(new Climber(false));
+    drRedButton.whenPressed(new DiscWrist(false));
+    **/
 
    // drBlueButton.whenPressed(new Climber(true));
    // drGreenButton.whenPressed(new Climber(false));

@@ -9,14 +9,13 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 /**
  * Add your docs here.
  */
 public class LVTwoBack extends Subsystem {
 
-  private final DoubleSolenoid L2Piston = new DoubleSolenoid(20, 5, 6);
+  private final DoubleSolenoid L2Piston = new DoubleSolenoid(20,0,1);
 
 public void Down() {
   L2Piston.set(DoubleSolenoid.Value.kForward);
