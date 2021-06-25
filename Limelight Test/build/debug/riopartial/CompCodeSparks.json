@@ -1,0 +1,9 @@
+[
+  {
+    "artifact": "frcJava (in project CompCodeSparks)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "CompCodeSparks",
+    "language": "java"
+  }
+]
